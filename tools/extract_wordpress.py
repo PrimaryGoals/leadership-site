@@ -25,7 +25,11 @@ NS = {
 # The export has several overlapping, partly retired WordPress menus, so the top menu is set here.
 NAV = [('Coaching', '/coaching/'), ('Theory', '/theory/'), ('Blog', '/blog/'), ('About', '/about/'),
        ('Contact', '/about/contact/')]
-OLD_HOSTS = r'https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org)'
+DEPRECATED = re.compile(
+    r'<a\s[^>]*href=["\'](?:https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org))?'
+    r'/(?:bmsu|bmsu-mission|bmsucoach|business-mri|whistle|whistle-beta|schedule|login)/?(?:[?#][^"\']*)?["\'][^>]*>'
+    r'(.*?)</a>', re.S | re.I)
+OLD_HOSTS =r'https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org)'
 
 # Shortcodes that mean the page only works inside WordPress.
 DYNAMIC = re.compile(r'\[/?(?:woocommerce_\w+|lifterlms_\w+|memb_\w+|else_memb_\w+|DAP|groups_can|'
@@ -74,6 +78,8 @@ def main(xml_path, out_dir):
                       lambda m: id_to_path.get(m.group(1), '/'), body)
         body = re.sub(r'(\s(?:href|src)=)(["\'])' + OLD_HOSTS + r'(/[^"\']*)?\2',
                       lambda m: '%s%s%s%s' % (m.group(1), m.group(2), m.group(3) or '/', m.group(2)), body)
+        # deprecated destinations: keep the link text, drop the link
+        body = DEPRECATED.sub(r'\1', body)
         # an older site layout kept these sections under /leadership/
         return re.sub(r'(\s(?:href|src)=["\'])/leadership/(?=(?:reduce-breakdowns|theory|conflict)/)', r'\1/', body)
 
