@@ -27,7 +27,7 @@ NAV = [('Coaching', '/coaching/'), ('Theory', '/theory/'), ('Blog', '/blog/'), (
        ('Contact', '/about/contact/')]
 DEPRECATED = re.compile(
     r'<a\s[^>]*href=["\'](?:https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org))?'
-    r'/(?:bmsu|bmsu-mission|bmsucoach|business-mri|whistle|whistle-beta|schedule|login)/?(?:[?#][^"\']*)?["\'][^>]*>'
+    r'/(?:bmsu|bmsu-mission|bmsucoach|business-mri|whistle|whistle-beta|schedule|login|discovery)/?(?:[?#][^"\']*)?["\'][^>]*>'
     r'(.*?)</a>', re.S | re.I)
 OLD_HOSTS =r'https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org)'
 
