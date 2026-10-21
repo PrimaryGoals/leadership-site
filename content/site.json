@@ -4,18 +4,112 @@
  "url": "https://primarygoals.org",
  "nav": [
   {
-   "label": "Coaching",
-   "href": "/coaching/",
-   "children": []
+   "label": "Team Development",
+   "href": "/",
+   "children": [
+    {
+     "label": "Books & Articles",
+     "href": "/teams/books/",
+     "children": [
+      {
+       "label": "Book Reviews",
+       "href": "/teams/books/",
+       "children": []
+      },
+      {
+       "label": "Article Reviews & Links",
+       "href": "/teams/articles/",
+       "children": []
+      },
+      {
+       "label": "Appreciative Inquiry",
+       "href": "/teams/appreciative-inquiry/",
+       "children": []
+      },
+      {
+       "label": "Cross Functional Teams",
+       "href": "/teams/articles/cross-functional-teams/",
+       "children": []
+      },
+      {
+       "label": "Sustainability",
+       "href": "/teams/articles/sustainability/",
+       "children": []
+      },
+      {
+       "label": "Group Dynamics",
+       "href": "/teams/group/",
+       "children": []
+      }
+     ]
+    },
+    {
+     "label": "Models & Instruments",
+     "href": "/teams/models/",
+     "children": [
+      {
+       "label": "Models",
+       "href": "/teams/models/",
+       "children": []
+      },
+      {
+       "label": "Instruments",
+       "href": "/teams/instruments/",
+       "children": []
+      },
+      {
+       "label": "Diagrams",
+       "href": "/teams/diagrams/",
+       "children": []
+      }
+     ]
+    },
+    {
+     "label": "Other",
+     "href": "/teams/general/",
+     "children": [
+      {
+       "label": "General Topics",
+       "href": "/teams/general/",
+       "children": []
+      },
+      {
+       "label": "Interactive Activities",
+       "href": "/teams/activities/",
+       "children": []
+      },
+      {
+       "label": "External Links",
+       "href": "/teams/links/",
+       "children": []
+      },
+      {
+       "label": "Leadership Quotes",
+       "href": "/teams/general/leadership-quotes/",
+       "children": []
+      },
+      {
+       "label": "Anti-Leadership Quotes",
+       "href": "/teams/links/anti-leadership/",
+       "children": []
+      }
+     ]
+    }
+   ]
   },
   {
-   "label": "Theory",
-   "href": "/theory/",
+   "label": "Leadership Coaching",
+   "href": "/teams/diagrams/leadership-culture-structure-process/",
    "children": []
   },
   {
    "label": "Blog",
    "href": "/blog/",
+   "children": []
+  },
+  {
+   "label": "Privacy",
+   "href": "/legal/privacy-policy/",
    "children": []
   },
   {

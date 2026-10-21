@@ -93,12 +93,18 @@ def render_body(raw):
 # Page shell: the same header, menu and footer on every page
 # --------------------------------------------------------------------------
 
-def nav_html(current):
-    items = []
-    for n in SITE['nav']:
-        cur = ' class="current"' if current.startswith(n['href']) else ''
-        items.append('<li%s><a href="%s">%s</a></li>' % (cur, esc(n['href']), esc(n['label'])))
-    return ''.join(items)
+def nav_html(current, items=None):
+    out = []
+    for n in SITE['nav'] if items is None else items:
+        cls = []
+        if n['href'] == current:
+            cls.append('current')
+        if n['children']:
+            cls.append('has-sub')
+        sub = '<ul>%s</ul>' % nav_html(current, n['children']) if n['children'] else ''
+        out.append('<li%s><a href="%s">%s</a>%s</li>' % (
+            ' class="%s"' % ' '.join(cls) if cls else '', esc(n['href']), esc(n['label']), sub))
+    return ''.join(out)
 
 
 def document(title, path, body, description='', noindex=False):

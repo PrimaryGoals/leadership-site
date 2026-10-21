@@ -7,7 +7,14 @@ body{margin:0;font:18px/1.65 Georgia,"Times New Roman",serif;color:var(--ink);ba
 .top .wrap{display:flex;flex-wrap:wrap;gap:.5rem 2rem;align-items:center;justify-content:space-between;max-width:64rem;padding-top:.9rem;padding-bottom:.9rem}
 .brand{color:#fff;font:700 1.35rem/1 system-ui,sans-serif;text-decoration:none}
 .top ul{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem;list-style:none;margin:0;padding:0;font:600 .95rem system-ui,sans-serif}
-.top a{color:#fff;text-decoration:none}.top li.current a,.top a:hover{text-decoration:underline}
+.top a{color:#fff;text-decoration:none}.top li.current>a,.top a:hover{text-decoration:underline}
+.top li{position:relative}
+.top li>ul{display:none;position:absolute;left:0;top:100%;z-index:10;min-width:15rem;flex-direction:column;gap:0;background:var(--brand);padding:.4rem 0;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.top li:hover>ul,.top li:focus-within>ul{display:flex}
+.top li>ul li>a{display:block;padding:.35rem 1rem;font-weight:500;white-space:nowrap}
+.top li>ul li>ul{left:100%;top:0}
+.top li>ul li.has-sub>a:after{content:" \25B8"}
+@media(max-width:700px){.top li>ul{position:static;display:flex;box-shadow:none;padding:0 0 0 1rem}.top li>ul li>ul{position:static}.top .wrap nav>ul{flex-direction:column}}
 main{padding:2rem 0 3rem}
 h1{font:700 2rem/1.2 system-ui,sans-serif;color:var(--brand);margin:0 0 .5rem}
 h2,h3,h4{font-family:system-ui,sans-serif;line-height:1.3;color:var(--brand)}

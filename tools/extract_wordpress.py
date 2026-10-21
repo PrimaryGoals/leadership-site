@@ -23,12 +23,45 @@ NS = {
     'content': 'http://purl.org/rss/1.0/modules/content/',
 }
 # The export has several overlapping, partly retired WordPress menus, so the top menu is set here.
-NAV = [('Coaching', '/coaching/'), ('Theory', '/theory/'), ('Blog', '/blog/'), ('About', '/about/'),
-       ('Contact', '/about/contact/')]
+# It follows the live site: Team Development has three groups of links under it.
+NAV = [
+    ('Team Development', '/', [
+        ('Books & Articles', '/teams/books/', [
+            ('Book Reviews', '/teams/books/'),
+            ('Article Reviews & Links', '/teams/articles/'),
+            ('Appreciative Inquiry', '/teams/appreciative-inquiry/'),
+            ('Cross Functional Teams', '/teams/articles/cross-functional-teams/'),
+            ('Sustainability', '/teams/articles/sustainability/'),
+            ('Group Dynamics', '/teams/group/')]),
+        ('Models & Instruments', '/teams/models/', [
+            ('Models', '/teams/models/'),
+            ('Instruments', '/teams/instruments/'),
+            ('Diagrams', '/teams/diagrams/')]),
+        ('Other', '/teams/general/', [
+            ('General Topics', '/teams/general/'),
+            ('Interactive Activities', '/teams/activities/'),
+            ('External Links', '/teams/links/'),
+            ('Leadership Quotes', '/teams/general/leadership-quotes/'),
+            ('Anti-Leadership Quotes', '/teams/links/anti-leadership/')])]),
+    # the live /leadership/ address redirects to this page
+    ('Leadership Coaching', '/teams/diagrams/leadership-culture-structure-process/', []),
+    ('Blog', '/blog/', []),
+    ('Privacy', '/legal/privacy-policy/', []),
+    ('About', '/about/', []),
+    ('Contact', '/about/contact/', []),
+]
+# Sections that were removed from the site on purpose (pages and every link to them).
+REMOVED_PREFIXES = ('/marketing/',)
 DEPRECATED = re.compile(
     r'<a\s[^>]*href=["\'](?:https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org))?'
-    r'/(?:bmsu|bmsu-mission|bmsucoach|business-mri|whistle|whistle-beta|schedule|login|discovery)/?(?:[?#][^"\']*)?["\'][^>]*>'
+    r'/(?:(?:bmsu|bmsu-mission|bmsucoach|business-mri|whistle|whistle-beta|schedule|login|discovery)/?'
+    r'|marketing(?:/[^"\'?#]*)?)(?:[?#][^"\']*)?["\'][^>]*>'
     r'(.*?)</a>', re.S | re.I)
+# Parts of the contact page that were removed on purpose: the calendar embed and the Facebook link.
+IFRAME = re.compile(r'\[iframe\b[^\]]*\]')
+FACEBOOK_ITEM = re.compile(r'\s*<li>\s*<a\s[^>]*facebook\.com[^>]*>.*?</a>\s*</li>', re.S | re.I)
+# Membership login/logout block: only meaningful inside WordPress.
+MEMBER_BLOCK = re.compile(r'\[memb_is_logged_in\].*?\[/memb_is_logged_in\]', re.S)
 OLD_HOSTS =r'https?://(?:www\.)?(?:leadfromself\.wpenginepowered\.com|primarygoals\.org)'
 
 # Shortcodes that mean the page only works inside WordPress.
@@ -90,12 +123,14 @@ def main(xml_path, out_dir):
         kind = text(it, 'wp:post_type')
         slug = text(it, 'wp:post_name')
         title = it.findtext('title') or slug
-        body = text(it, 'content:encoded')
+        body = MEMBER_BLOCK.sub('', text(it, 'content:encoded'))
         why = None
         if text(it, 'wp:status') != 'publish':
             why = text(it, 'wp:status')
         elif text(it, 'wp:post_password'):
             why = 'password'
+        elif path_of(it).startswith(REMOVED_PREFIXES):
+            why = 'removed'
         elif DYNAMIC.search(body):
             why = 'wordpress-only shortcode'
         if why:
@@ -107,6 +142,10 @@ def main(xml_path, out_dir):
                       lambda m: to_table(tp_by_order[int(m.group(1)) - 1])
                       if 0 < int(m.group(1)) <= len(tp_by_order) else '', body)
         body = STRIP.sub('', body)
+        body = IFRAME.sub('', body)
+        body = FACEBOOK_ITEM.sub('', body)
+        # trailing spaces / stray <br /> inside an address make the link unusable
+        body = re.sub(r'(href=["\'][^"\']*?)(?:\s|<br\s*/?>)+(["\'])', r'\1\2', body)
         body = fix_links(body)
         meta = {
             'id': int(text(it, 'wp:post_id')),
@@ -122,7 +161,18 @@ def main(xml_path, out_dir):
             f.write('---\n%s\n---\n%s\n' % (json.dumps(meta, ensure_ascii=False), body))
         kept.append(meta['path'])
 
-    nav = [dict(label=l, href=h, children=[]) for l, h in NAV if h in set(kept)]
+    have = set(kept)
+
+    def build_nav(entries):
+        out = []
+        for label, href, *rest in entries:
+            kids = build_nav(rest[0]) if rest and rest[0] and isinstance(rest[0][0], tuple) and len(rest[0][0]) == 3 else \
+                [dict(label=l, href=h, children=[]) for l, h in (rest[0] if rest else []) if h in have]
+            if href in have or kids:
+                out.append(dict(label=label, href=href, children=kids))
+        return out
+
+    nav = build_nav(NAV)
     site = {
         'title': ch.findtext('title') or '',
         'description': ch.findtext('description') or '',
