@@ -1,0 +1,52 @@
+draft	page	/	Affiliate Management FAQ
+draft	page	/	Auditing
+draft	page	/	Brand Scripts Made Simple
+draft	page	/	Communications
+draft	page	/	Data Migration
+draft	page	/	Infusionsoft Campaigns
+draft	page	/	Infusionsoft Offers
+draft	page	/	Marketing Website Review
+draft	page	/	Process Consulting
+draft	page	/	Refund and Returns Policy
+draft	page	/	Story Brand Guide - MRF pre 2021.03.13
+draft	page	/	Story Brand Guide - Prospects don't understand
+draft	page	/	Systems Integration
+draft	page	/	Testing - Delete Me
+draft	page	/	ToMarketing
+draft	page	/	Workflow Automation
+draft	post	/	
+draft	post	/	Auto Draft
+draft	post	/	Blog root
+draft	post	/	Centralized Dispatch of Notion Scripts
+draft	post	/	Company Profile
+draft	post	/	Four Reasons Why Business Coaches Are Afraid to Promise Results
+draft	post	/	Getting Started with Video & Podcasting
+draft	post	/	Have YOU lost integrity too?
+draft	post	/	Implementing Multiple Foreign Keys in Notion
+draft	post	/	Saving Zoom Transcripts to Notion
+draft	post	/	The Mechanic and the Racecar Driver
+password	page	/nami/	NAMI - Authenticity
+password	page	/offers/brandscripts-made-better/	Brand Scripts Made Better
+private	page	/marketing-technology-strategy/	Marketing & Technology Strategy
+private	page	/mijireh-secure-checkout/	Mijireh Secure Checkout
+private	page	/offers/business-made-simple-coach/	Business Coaching for Growth
+private	page	/offers/early-2020/	Story Brand Guide (early 2000)
+private	page	/offers/missions-made-simple/	Clarify Your Mission
+private	page	/offers/sbguide/	Story Brand Guide (through 7/2020)
+private	page	/offers/story-brand-guide-2021-03-13/	Story Brand Guide – 2021.03.13
+private	page	/offers/story-brand-guide-7-elements/	Story Brand Guide &#8211; 7 Elements
+private	page	/offers/story-brand-guide/	Story Brand Guide – 2022
+private	page	/wc-sc-coupons-terms/	Smart Coupons Terms
+private	page	/why-are-business-coaches-afraid-to-promise-results/	Why Are Business Coaches Afraid to Promise Results?
+wordpress-only shortcode	page	/blogs/	Blogs
+wordpress-only shortcode	page	/cart/	Cart
+wordpress-only shortcode	page	/checkout/	Checkout
+wordpress-only shortcode	page	/login/	Welcome
+wordpress-only shortcode	page	/marketing/10-conversations-digital-marketing/	10 Conversations of Digital Marketing
+wordpress-only shortcode	page	/my-account/	My Account
+wordpress-only shortcode	page	/my-account/change-your-password/	Change Your Password
+wordpress-only shortcode	page	/my-account/refresh/	Refresh
+wordpress-only shortcode	page	/purchase/	Purchase
+wordpress-only shortcode	page	/shop/cleints/	Private Store Login
+wordpress-only shortcode	page	/teams/articles/	Article Summaries
+wordpress-only shortcode	page	/teams/group/thomas-kilmann/	Thomas-Kilmann Conflict Instrument Diagram (TKI)

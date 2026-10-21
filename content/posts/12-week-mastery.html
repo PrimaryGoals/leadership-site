@@ -1,0 +1,206 @@
+---
+{"id": 4348, "title": "12 Week Mastery", "slug": "12-week-mastery", "path": "/12-week-mastery/", "date": "2016-09-21", "modified": "2024-10-11 16:11:20", "type": "post"}
+---
+
+<p>I started exploring <a href="http://12weekmastery.com/">12-Week Mastery</a> recently.<br>For those who are interested, this post is about my implementation notes. &nbsp;Feel free to comment with further ideas if you're familiar with the approach.</p>
+
+
+
+<p>At this time, I'm just starting, and although the "paper" system looks OK, I live and die by Evernote and my Calendar. So I wanted a way to implement the 12-week system within Evernote.</p>
+
+
+
+<p><a href="#Excel">Update: Evernote could not provide a grid view... skip to my Excel solution</a></p>
+
+
+
+<h2 class="wp-block-heading">12 Week Mastery with EverNote</h2>
+
+
+
+<div>For starters, I already had Evernote configured in accord with the principles of <a href="https://thesecretweapon.org/">The Secret Weapon</a>, which I understand comes from <a href="https://gettingthingsdone.com/">Getting Things Done</a>.<br>Here are some additional tags I added:</div>
+
+
+
+<ul class="wp-block-list">
+<li>.Status
+<ul class="wp-block-list">
+<li>ST.Abandoned</li>
+
+
+
+<li>ST.Complete</li>
+
+
+
+<li>ST.InProgress</li>
+
+
+
+<li>ST.Planning</li>
+</ul>
+</li>
+
+
+
+<li>.Why
+<ul class="wp-block-list">
+<li>!Family</li>
+
+
+
+<li>!Finance</li>
+
+
+
+<li>!Fitness</li>
+
+
+
+<li>!Marketing</li>
+</ul>
+</li>
+
+
+
+<li>.When
+<ul class="wp-block-list">
+<li>Week-01</li>
+
+
+
+<li>Week-02</li>
+
+
+
+<li>&nbsp; &nbsp; ...</li>
+
+
+
+<li>Week-12</li>
+
+
+
+<li><span style="color: #999999;">0 - Committed</span></li>
+
+
+
+<li><span style="color: #999999;">1 - Now</span></li>
+
+
+
+<li><span style="color: #999999;">2 - Next</span></li>
+
+
+
+<li><span style="color: #999999;">3 - Soon</span></li>
+
+
+
+<li><span style="color: #999999;">4 - Later</span></li>
+
+
+
+<li><span style="color: #999999;">5 - Some Day</span></li>
+
+
+
+<li><span style="color: #999999;">6 - To Contact</span></li>
+</ul>
+</li>
+</ul>
+
+
+
+<div>The .Status tags are because Evernote does not really flag completion on its own, and I did not want to delete tasks when I was done with them. &nbsp;The idea came from <a href="https://discussion.evernote.com/forums/topic/87205-markinghiding-a-note-as-donecomplete/#comment-372509">this discussion on the Evernote forum</a>, &nbsp; I wanted to keep tasks&nbsp;where they were for the sake of tracking and score-keeping (which I have yet to implement), but still have a way to get them out of the way.</div>
+
+
+
+<div>
+<p>The <strong>.Why</strong> tags hold my goals. &nbsp;I have others, but the ones above are good for documentation. &nbsp;All my goals start with !, but not every task for every goal is going to be part of my 12-week mastery process. &nbsp;That was in fact part of my challenge... I have a boatload of tasks that I'm not ready to get rid of, yet still need a decent way of prioritizing (periodizing?) them for productivity.</p>
+<div>The <strong>.When</strong> tags are exclusively for periodization and priority. &nbsp;I already had some .When tags from The Secret Weapon (my tags starting 0-6), but these are outside the 12-week-mastery approach. &nbsp;Fortunately, Evernote will let these systems interoperate as I learn the 12-week approach.</div>
+<div>&nbsp;</div>
+<div>Next, I created some saved searches. &nbsp;Personally, I think searches are the key to making Evernote work, and to use them well, you either have to understand <a href="https://help.evernote.com/hc/en-us/articles/208313828-Use-advanced-search-syntax">Evernote's Advanced Search Syntax</a>, or you can use my cheat-sheets below.</div>
+<hr>
+</div>
+
+
+
+<table><tr><th>SAVED SEARCH</th><th>FILTER</th><th>PURPOSE</th></tr><tr><td>!Goals - 12Week Pending</td><td>notebook:"Actions Pending" -tag:ST.Complete tag:Week* tag:!*</td><td>These are tasks that are on my 12-week plan (tag:Week*), and not yet complete (-tag:ST.Complete), and relate to my why/goals (tag:!*)</td></tr><tr><td>!Goals - 12Week All</td><td>notebook:"Actions Pending" tag:!* tag:Week*</td><td>These are tasks that are on my 12-week plan (tag:Week*), and relate to my goals (tag:!*)</td></tr><tr><td>!OneGoal - Pending</td><td>notebook:"Actions Pending" -tag:ST.Complete tag:Week* tag:!OneGoal</td><td>I have one of these for each of my 12-week year goals. Replace OneGoal with the individual goal tag. For any goal that I am managing on the 12-week process, i want to be able to pick actions not done yet and tackle them. But I only want those that are part of the 12-week year (tag:Week*), since I have far more tasks related to my goals than I am managing with this process.</td></tr><tr><td>Week-## Pending</td><td>notebook:"Actions Pending" -tag:ST.Complete tag:Week-##</td><td>I have one of these for each week in the plan. At the outset, it lets me review that I have my weeks balanced, and that each week takes care of multiple specific goals. It also filters OUT any task that are already complete. If I want to see all tasks for a week, including complete, I'll just click directly on that tag, rather than the saved search.</td></tr></table>
+
+
+
+<hr class="wp-block-separator has-alpha-channel-opacity"/>
+
+
+
+<h2 class="wp-block-heading">Recurring Actions</h2>
+
+
+
+<p>That looked like a decent structure, until I started dealing with my recurring tasks... how did I want to enter those for scoring, and without creating a large number of duplicate tasks?</p>
+
+
+
+<p>Many of my actions are not things that are done once and complete - they are practices I wish to embody and habits that I wish to ingrain.</p>
+
+
+
+<p>For those, I added a single task, put weekly check-boxes in the note, and tagged them with all the relevant Week-## tags so that they showed up more than once.</p>
+
+
+
+<figure class="wp-block-image"><img src="/wp-content/uploads/2016/09/Recurring.png" alt="recurring activities" class="wp-image-4346"/></figure>
+
+
+
+<p></p>
+
+
+
+<p>In the case of higher recurrence, such as exercising 4x/Week, I used a similar approach:</p>
+
+
+
+<figure class="wp-block-image"><img src="/wp-content/uploads/2016/09/4xWeekly.png" alt="Exercise 4X per week" class="wp-image-4347"/></figure>
+
+
+
+<p><br><a id="Excel"></a></p>
+
+
+
+<h2 class="wp-block-heading">12 Week Mastery with Excel</h2>
+
+
+
+<p>I think if I fully planned everything for the 12-week year all at once, EverNote might work. &nbsp;However, it lacks an ability to view the whole year at a glance in a grid-form. &nbsp;For that, I went back to Excel, then added a few macros to make it easier for me to use. &nbsp;The video below shows the highlights. &nbsp;In particular:</p>
+
+
+
+<ul class="wp-block-list">
+<li>Automated score-keeping in line with the 12-week-year approach</li>
+
+
+
+<li>Visual overview of how I'm doing</li>
+
+
+
+<li>Ability to see where tasks on a goal are light or heavy relative to other goals in any given week</li>
+</ul>
+
+
+
+<p>It doesn't say in the video, but note that the COLOR CODING IS KEY... &nbsp;Pick the color you want to use for "complete" in D1, then any cell that color is automatically counted as complete.</p>
+
+
+
+<p><a href="/wp-content/uploads/2016/10/2016.Q4-planning.xlsm">Here's a link to the as-is spreadsheet</a>. &nbsp;Note that you will have to ENABLE MACROS.</p>
+
+
+
+<figure class="wp-block-embed is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+https://youtu.be/_qZP6yvd7rQ
+</div></figure>
+

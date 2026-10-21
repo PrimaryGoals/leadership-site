@@ -1,0 +1,32 @@
+{
+ "title": "Organizational Development",
+ "description": "Resources from PrimaryGoals.com migration",
+ "url": "https://primarygoals.org",
+ "nav": [
+  {
+   "label": "Coaching",
+   "href": "/coaching/",
+   "children": []
+  },
+  {
+   "label": "Theory",
+   "href": "/theory/",
+   "children": []
+  },
+  {
+   "label": "Blog",
+   "href": "/blog/",
+   "children": []
+  },
+  {
+   "label": "About",
+   "href": "/about/",
+   "children": []
+  },
+  {
+   "label": "Contact",
+   "href": "/about/contact/",
+   "children": []
+  }
+ ]
+}
