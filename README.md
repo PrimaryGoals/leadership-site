@@ -35,6 +35,7 @@ Rebuild after any change, then check it:
 * Left out on purpose (see `content/skipped.txt`): drafts, private and password-protected pages, and pages that only work inside WordPress (shop, cart, checkout, My Account, login, members-only content, the Gravity Form page).
 * Side panels: 191 pages show the same section menu as the live site (e.g. the Books list on every `/teams/books/` page). The live site's "Blog categories" panel is left out because there are no category pages here.
 * Google Tag Manager (`GTM-KHMRKD2`, set in `build.py`) is on every page and manages the other tags. Every content page also carries titles, descriptions, Open Graph/Twitter tags and JSON-LD like the live site had.
+* `content/seo.json` is a one-time snapshot of every live page's title, meta description and social-sharing image, so search listings stay as they were. Edit it to change one; pages not in it fall back to values built from the content.
 * Videos on the two `/offers/brandscripts-made-simple/…` pages are listed in `VIDEOS` in `tools/extract_wordpress.py` (the export did not contain them).
 * The original page layouts were built with Thrive Architect. They are rendered here as plain content in one simple design, so layout and styling differ from the old site.
 * `tools/check_site.py` reports no broken internal links. Links to the retired short addresses (`/bmsu/`, `/discovery/`, `/schedule`, `/login` and similar) and to `/marketing/` were removed (the link text stays). Three uploads (`2000Ideavirus.pdf`, `courses-box.png`, `live-workshop.jpg`) are not in the archive.

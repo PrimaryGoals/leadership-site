@@ -35,6 +35,9 @@ DEFAULT_IMAGE = '/wp-content/uploads/2024/09/social-share.jpg'  # shared when a 
 SIDEBARS = (json.loads((CONTENT / 'sidebars.json').read_text(encoding='utf-8'))
             if (CONTENT / 'sidebars.json').exists() else {})
 HAVE = set()
+# Titles, descriptions and social images exactly as the live site had them (captured once); they win over anything derived.
+SEO = (json.loads((CONTENT / 'seo.json').read_text(encoding='utf-8'))
+       if (CONTENT / 'seo.json').exists() else {})
 GTM_ID = 'GTM-KHMRKD2'  # Google Tag Manager; it manages the other tags (analytics etc.)
 GTM_HEAD = ("<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});"
             "var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;"
@@ -231,6 +234,14 @@ def sidebar_html(path):
     return '<aside class="side" aria-label="Section menu">%s</aside>' % ''.join(out) if out else ''
 
 
+def seo_args(p):
+    live = SEO.get(p['path'])
+    if live is None:
+        return dict(description=p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', ''))
+    return dict(description=live['description'], seo_title=live['title'] or p.get('seo_title', ''),
+                image=live['image'] or p.get('image', ''))
+
+
 def page_info(p):
     return {'type': p.get('type', 'page'), 'published': p.get('published_gmt') or p['date'],
             'modified': p.get('modified_gmt') or p['date']}
@@ -269,10 +280,10 @@ def main():
                 p['title'], [(q['path'], q['title'], q['date']) for q in ordered_posts])))
         else:
             add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], path=p['path']),
-                                    p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', ''), page=page_info(p)))
+                                    page=page_info(p), **seo_args(p)))
     for p in posts:
         add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'], p['path']),
-                                p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', ''), page=page_info(p)))
+                                page=page_info(p), **seo_args(p)))
 
     allp = sorted(((q['path'], q['title'], '') for q in pages + posts), key=lambda e: e[0])
     add('/site-map/', document('Site map', '/site-map/', listing('Site map', allp)))
