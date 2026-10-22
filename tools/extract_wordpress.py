@@ -22,6 +22,7 @@ from urllib.parse import urlparse
 NS = {
     'wp': 'http://wordpress.org/export/1.2/',
     'content': 'http://purl.org/rss/1.0/modules/content/',
+    'excerpt': 'http://wordpress.org/export/1.2/excerpt/',
 }
 # The export has several overlapping, partly retired WordPress menus, so the top menu is set here.
 # It follows the live site: Team Development has three groups of links under it.
@@ -116,13 +117,16 @@ def seo_title(pm, title, sitename):
     return html.unescape(t.replace('%title%', title).replace('%sep%', '-').replace('%sitename%', sitename))
 
 
-def seo_description(pm, body):
-    """A custom description if one was written, else the first ~160 characters of the text (as Rank Math does)."""
+def seo_description(pm, body, excerpt=''):
+    """A custom description if one was written, else the excerpt, else the first ~160 characters of the text."""
     d = (pm.get('rank_math_description') or '').strip()
     if d:
         return html.unescape(d)
-    s = re.sub(r'<(script|style)\b.*?</\1>|<!--.*?-->', '', body, flags=re.S)
-    s = html.unescape(re.sub(r'<[^>]+>', ' ', s)).replace('\xa0', ' ')
+    s = excerpt.strip() or body
+    s = re.sub(r'<(script|style).*?</>|<!--.*?-->', '', s, flags=re.S)
+    # a video address alone on a line is shown as a player, so it is not text
+    s = re.sub(r'(?m)^\s*(?:<p>)?\s*https?://(?:www\.)?(?:youtube\.com/watch|youtu\.be/)\S*\s*(?:</p>)?\s*$', '', s)
+    s = html.unescape(re.sub(r'<[^>]+>', '', s)).replace(' ', ' ')
     s = re.sub(r'\s+', ' ', s).strip()
     return s if len(s) <= 160 else s[:160].rsplit(' ', 1)[0].rstrip(' ,;:')
 
@@ -213,12 +217,12 @@ def main(xml_path, out_dir):
         stored = re.search(r'https?://[^"\']+?\.(?:jpe?g|png|gif|webp)', pm.get('rank_math_og_content_image', ''), re.I)
         first_img = re.search(r'<img\b[^>]*\bsrc=["\'](/[^"\']+)', body)
         image = (attachments.get(pm.get('_thumbnail_id', '')) or (re.sub(OLD_HOSTS, '', stored.group(0)) if stored else '')
-                 or (first_img.group(1) if first_img else ''))
+                 or (first_img.group(1) if first_img and kind == 'page' else ''))
         meta = {
             'id': int(text(it, 'wp:post_id')),
             'title': title,
             'seo_title': seo_title(pm, title, sitename),
-            'description': seo_description(pm, body),
+            'description': seo_description(pm, body, text(it, 'excerpt:encoded')),
             'image': image,
             'slug': slug,
             'path': path_of(it),
