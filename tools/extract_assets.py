@@ -21,7 +21,9 @@ REF = re.compile(r'/((?:wp-content/uploads|wp-content/gallery|Diagrams|Readings|
 
 def main(zip_path, content_dir, out_dir):
     wanted = set()
-    for f in Path(content_dir).rglob('*.html'):
+    for f in Path(content_dir).rglob('*'):
+        if f.suffix not in ('.html', '.json'):
+            continue
         wanted.update(unquote(m) for m in REF.findall(f.read_text(encoding='utf-8')))
     found = set()
     with zipfile.ZipFile(zip_path) as z:

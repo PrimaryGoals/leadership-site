@@ -18,6 +18,7 @@ import re
 import shutil
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parent
 CONTENT = ROOT / 'content'
@@ -28,7 +29,11 @@ SITE = json.loads((CONTENT / 'site.json').read_text(encoding='utf-8'))
 SITE_URL = SITE['url']
 NAME = 'Primary Goals'
 TAGLINE = 'Leadership, teams and organizational development'
-CSS_VERSION = '1'
+CSS_VERSION = '3'
+# Side panels captured once from the live site (page path -> menus); see README.
+SIDEBARS = (json.loads((CONTENT / 'sidebars.json').read_text(encoding='utf-8'))
+            if (CONTENT / 'sidebars.json').exists() else {})
+HAVE = set()
 
 esc = html.escape
 
@@ -134,10 +139,34 @@ def document(title, path, body, description='', noindex=False):
     ])
 
 
-def article(title, raw, date=''):
+def link_ok(href):
+    """Internal links must point at something that is built; external links always pass."""
+    if re.match(r'https?://', href):
+        return True
+    p = href.split('#')[0].split('?')[0]
+    return p in HAVE or (STATIC / unquote(p).lstrip('/')).is_file()
+
+
+def sidebar_html(path):
+    """The side panel the live site shows: one or more link lists (captured once into content/sidebars.json)."""
+    out = []
+    for mid in SIDEBARS.get('pages', {}).get(path, []):
+        menu = SIDEBARS['menus'][mid]
+        links = [(l, h) for l, h in menu['links'] if h and link_ok(h)]
+        if not menu['title'] or not links:
+            continue
+        items = ''.join('<li%s><a href="%s">%s</a></li>' % (
+            ' class="current"' if h == path else '', esc(h), esc(l)) for l, h in links)
+        out.append('<section><h2>%s</h2><ul>%s</ul></section>' % (esc(menu['title']), items))
+    return '<aside class="side" aria-label="Section menu">%s</aside>' % ''.join(out) if out else ''
+
+
+def article(title, raw, date='', path=''):
     when = '<p class="meta">%s</p>' % esc(date) if date else ''
-    return ('<main id="content"><div class="wrap"><article><h1>%s</h1>%s'
-            '<div class="prose">%s</div></article></div></main>' % (esc(title), when, render_body(raw)))
+    side = sidebar_html(path)
+    return ('<main id="content"><div class="wrap%s">%s<article><h1>%s</h1>%s'
+            '<div class="prose">%s</div></article></div></main>' % (
+                ' has-side' if side else '', side, esc(title), when, render_body(raw)))
 
 
 def listing(title, entries):
@@ -149,6 +178,8 @@ def listing(title, entries):
 
 def main():
     pages, posts = load('pages'), load('posts')
+    HAVE.update(p['path'] for p in pages + posts)
+    HAVE.update(('/blog/', '/site-map/'))
     out = {}
 
     def add(path, content):
@@ -162,9 +193,9 @@ def main():
             add(p['path'], document(p['title'], p['path'], listing(
                 p['title'], [(q['path'], q['title'], q['date']) for q in ordered_posts])))
         else:
-            add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'])))
+            add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], path=p['path'])))
     for p in posts:
-        add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'])))
+        add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'], p['path'])))
 
     allp = sorted(((q['path'], q['title'], '') for q in pages + posts), key=lambda e: e[0])
     add('/site-map/', document('Site map', '/site-map/', listing('Site map', allp)))

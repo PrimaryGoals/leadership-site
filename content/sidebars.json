@@ -1,0 +1,1990 @@
+{
+ "menus": {
+  "m1": {
+   "title": "BLOG CATEGORIES",
+   "links": [
+    [
+     "Coaching",
+     "/category/coaching/"
+    ],
+    [
+     "Conflict",
+     "/category/conflict/"
+    ],
+    [
+     "Dysfunction",
+     "/category/dysfunction/"
+    ],
+    [
+     "Health",
+     "/category/health/"
+    ],
+    [
+     "Marketing",
+     "/category/generative-marketing/"
+    ],
+    [
+     "StoryBrand",
+     "/category/generative-marketing/storybrand/"
+    ],
+    [
+     "Mission",
+     "/category/mission/"
+    ],
+    [
+     "Team",
+     "/category/team/"
+    ],
+    [
+     "Theory of Practice",
+     "/category/theory-of-practice/"
+    ],
+    [
+     "Training",
+     "/category/training/"
+    ],
+    [
+     "Uncategorized",
+     "/category/uncategorized/"
+    ],
+    [
+     "Vision",
+     "/category/vision/"
+    ]
+   ]
+  },
+  "m2": {
+   "title": "Appreciative Inquiry",
+   "links": [
+    [
+     "AI exercise for groups",
+     "/teams/appreciative-inquiry/appreciative-inquiry-exercise/"
+    ],
+    [
+     "Appreciative Eye / Critical Eye",
+     "/teams/appreciative-inquiry/appreciative-eye-critical-eye/"
+    ],
+    [
+     "Appreciative Inquiry",
+     "/teams/appreciative-inquiry/"
+    ],
+    [
+     "Appreciative Management & Leadership",
+     "/Readings/AppreciativeInquiry/AppMgmntLdrshp.pdf"
+    ],
+    [
+     "Summary",
+     "/teams/appreciative-inquiry/affirmative-basis-of-organization/"
+    ],
+    [
+     "The “Child” as Agent of Inquiry",
+     "/Readings/AppreciativeInquiry/ChildAgentInquiry.pdf"
+    ],
+    [
+     "Five Theories of Change Embedded in Appreciative Inquiry",
+     "https://www.gervasebushe.ca/ai5.pdf"
+    ],
+    [
+     "Positive Revolution in Change: AI",
+     "/Readings/AppreciativeInquiry/PosRevInChange.pdf"
+    ],
+    [
+     "Resources for getting AI started",
+     "/Readings/AppreciativeInquiry/Resources_for_AI.pdf"
+    ],
+    [
+     "The Roundtable Project",
+     "/Readings/AppreciativeInquiry/RoundtableProject.pdf"
+    ]
+   ]
+  },
+  "m3": {
+   "title": "General Topics",
+   "links": [
+    [
+     "Appreciative Inquiry",
+     "/teams/appreciative-inquiry/"
+    ],
+    [
+     "The Abilene Paradox",
+     "/teams/general/abilene-paradox/"
+    ],
+    [
+     "Authenticity, Seven Skills (Carkhuff)",
+     "/teams/models/carkhuff/"
+    ],
+    [
+     "Change Theories",
+     "/teams/general/change/"
+    ],
+    [
+     "Readiness formula",
+     "/teams/general/change/readiness-formula/"
+    ],
+    [
+     "Why Change Fails",
+     "/teams/general/change/why-change-fails/"
+    ],
+    [
+     "Characteristics of Culture",
+     "/teams/general/characteristics-of-culture/"
+    ],
+    [
+     "Cross Functional Teams",
+     "/teams/articles/cross-functional-teams/"
+    ],
+    [
+     "Defense Mechanisms – Gestalt (Perls)",
+     "/teams/general/defense-mechanisms/"
+    ],
+    [
+     "Feedback: A Constructive Guide",
+     "/teams/general/constructive-feedback/"
+    ],
+    [
+     "Feeling Words",
+     "/teams/general/feeling-words/"
+    ],
+    [
+     "Feedback: Clean vs. Dirty",
+     "/teams/general/feedback/"
+    ],
+    [
+     "Humanistic Psychology (Rogers)",
+     "/teams/models/rogers/"
+    ],
+    [
+     "Leadership Quotes",
+     "/teams/general/leadership-quotes/"
+    ],
+    [
+     "Making Demands: Skill Assesment",
+     "/teams/books/high-impact-consulting/making-demands/"
+    ],
+    [
+     "Meaning Making",
+     "/teams/general/meaning-making/"
+    ],
+    [
+     "Nine Performance Variables",
+     "/teams/general/performance-variables/"
+    ],
+    [
+     "Self Soothing",
+     "/teams/general/self-soothing/"
+    ],
+    [
+     "Skill – Will Matrix",
+     "/teams/general/skill-will-matrix/"
+    ],
+    [
+     "Wants and Offers Matrix",
+     "/teams/general/wants-and-offers-matrix/"
+    ]
+   ]
+  },
+  "m4": {
+   "title": "Interactive Activites",
+   "links": [
+    [
+     "Appreciative Inquiry Exercise",
+     "/teams/appreciative-inquiry/appreciative-inquiry-exercise/"
+    ],
+    [
+     "Diversity Workshop",
+     "/teams/activities/diversity-workshop/"
+    ],
+    [
+     "Index Card Towers",
+     "/teams/activities/index-card-towers/"
+    ],
+    [
+     "Laughing Game",
+     "/teams/activities/laughing-game/"
+    ],
+    [
+     "Look!",
+     "/teams/activities/look/"
+    ],
+    [
+     "Maintaining Patterns",
+     "/teams/activities/maintaining-patterns/"
+    ],
+    [
+     "Pulse",
+     "/teams/activities/pulse/"
+    ],
+    [
+     "Shake Out!",
+     "/teams/activities/shakeout/"
+    ],
+    [
+     "Signature Competence",
+     "/teams/activities/signature-competence/"
+    ],
+    [
+     "Sugar Cube Towers",
+     "/teams/activities/sugar-cube-towers/"
+    ],
+    [
+     "The Two Headed Wolf",
+     "/teams/activities/two-headed-wolf/"
+    ]
+   ]
+  },
+  "m5": {
+   "title": "Articles / Readings",
+   "links": [
+    [
+     "Decision Making: an Experimental Approach",
+     "/teams/articles/decision-making/"
+    ],
+    [
+     "E-Mail Escalation — Dispute Exacerbating Elements of Electronic Communication",
+     "/teams/articles/e-mail-escalation/"
+    ],
+    [
+     "Individual and Organizational Learning",
+     "/teams/articles/individual-and-organizational-learning/"
+    ],
+    [
+     "Fast Company",
+     "https://www.fastcompany.com/"
+    ],
+    [
+     "Dee Hock on Vision",
+     "https://www.fastcompany.com/27333/trillion-dollar-vision-dee-hock"
+    ],
+    [
+     "Dee Hock on Organizations",
+     "https://www.fastcompany.com/27677/dee-hock-organizations"
+    ],
+    [
+     "Dee Hock on Management",
+     "https://www.fastcompany.com/27454/dee-hock-management"
+    ],
+    [
+     "Practical Radicals",
+     "https://www.fastcompany.com/40529/practical-radicals"
+    ],
+    [
+     "Group-Think: Challenger Shuttle",
+     "/Readings/CrossFunctionalWorkTeams/GroupThink_ChallengerShuttle.pdf"
+    ],
+    [
+     "Summary",
+     "/teams/articles/groupthink-challenger-shuttle/"
+    ],
+    [
+     "Towards the Differentiation of a Self in One’s Own Family",
+     "/teams/articles/towards-the-differentiation-of-a-self-in-ones-own-family/"
+    ]
+   ]
+  },
+  "m6": {
+   "title": "Cross Functional Teams",
+   "links": [
+    [
+     "Social Loafing in Work Groups",
+     "/Readings/CrossFunctionalWorkTeams/Social_Loafing.pdf"
+    ],
+    [
+     "Summary",
+     "/teams/articles/cross-functional-teams/social-loafing/"
+    ]
+   ]
+  },
+  "m7": {
+   "title": "Sustainability",
+   "links": [
+    [
+     "Natural Step",
+     "/teams/articles/sustainability/natural-step/"
+    ],
+    [
+     "Principles of Sustaining Human Communities (Capra)",
+     "/teams/articles/sustainability/sustaining-human-communities/"
+    ],
+    [
+     "Sustainability",
+     "/teams/articles/sustainability/"
+    ],
+    [
+     "Ecological Footprint (PowerPoint)",
+     "/Readings/Sustainability/EcologicalFootprint.ppt"
+    ],
+    [
+     "Sustainability Advantage (PowerPoint)",
+     "/Readings/Sustainability/SustainabilityAdvantage.ppt"
+    ],
+    [
+     "Sustainability Audit/Assessment Questions",
+     "/teams/articles/sustainability/audit-questions/"
+    ],
+    [
+     "Total Corporate Responsibility (Dixon, PDF)",
+     "/Readings/Sustainability/TotalCorporateResponsibility_Frank_Dixon.pdf"
+    ]
+   ]
+  },
+  "m8": {
+   "title": "Books",
+   "links": [
+    [
+     "The Advantage",
+     "/teams/books/the-advantage/"
+    ],
+    [
+     "The Five Dysfunctions of a Team",
+     "/teams/books/five-dysfunctions/"
+    ],
+    [
+     "The Adult Learner",
+     "/teams/books/adult-learner/"
+    ],
+    [
+     "The Beauty of the Beast",
+     "/teams/books/the-beauty-of-the-beast/"
+    ],
+    [
+     "Beyond Rational Management",
+     "/teams/books/beyond-rational-management/"
+    ],
+    [
+     "Built to Last",
+     "/teams/books/built-to-last/"
+    ],
+    [
+     "The Charge",
+     "/teams/books/the-charge/"
+    ],
+    [
+     "Core Communication Skills and Process",
+     "/teams/books/core-communication-skills-and-process/"
+    ],
+    [
+     "Difficult Conversations",
+     "/teams/books/difficult-conversations/"
+    ],
+    [
+     "The Divine Matrix",
+     "/teams/books/divine-matrix/"
+    ],
+    [
+     "Driving Fear out of the Workplace",
+     "/teams/books/driving-fear-out-of-the-workplace/"
+    ],
+    [
+     "Emotional Alchemy",
+     "/teams/books/emotional-alchemy/"
+    ],
+    [
+     "Extraordinary Relationships (Gilbert)",
+     "/teams/books/extraordinary-relationships/"
+    ],
+    [
+     "The Fifth Dicipline",
+     "/teams/books/the-fifth-dicipline/"
+    ],
+    [
+     "Leadership on the Line",
+     "/teams/books/leadership-on-the-line/"
+    ],
+    [
+     "Flawless Consulting",
+     "/teams/books/flawless-consulting/"
+    ],
+    [
+     "Getting to Yes (Outline)",
+     "/teams/books/getting-toyes/"
+    ],
+    [
+     "The Gift Of Therapy",
+     "/teams/books/the-gift-of-therapy/"
+    ],
+    [
+     "Good To Great",
+     "/teams/books/good-to-great/"
+    ],
+    [
+     "The Handbook of Emotionally Intelligent Leadership",
+     "/teams/books/emotionally-intelligent-leadership/"
+    ],
+    [
+     "The Heart Of Change",
+     "/teams/books/heart-of-change/"
+    ],
+    [
+     "High Impact Consulting",
+     "/teams/books/high-impact-consulting/"
+    ],
+    [
+     "How To Win Friends & Influence People",
+     "/teams/books/win-friends-influence-people/"
+    ],
+    [
+     "If God Had Meant Man to Fly, He Would Have Given Him Wings",
+     "/teams/books/if-god-had-meant-man-to-fly/"
+    ],
+    [
+     "Influencer",
+     "/teams/books/influencer/"
+    ],
+    [
+     "The Intimacy Paradox",
+     "/teams/books/intimacy-paradox/"
+    ],
+    [
+     "Leadership and the One Minute Manager",
+     "/teams/books/one-minute-manager/"
+    ],
+    [
+     "Leadership and the New Science",
+     "/teams/books/leadership-new-science/"
+    ],
+    [
+     "Leadership Without Easy Answers",
+     "/teams/books/leadership-without-easy-answers/"
+    ],
+    [
+     "Leading at the Edge of Chaos",
+     "/teams/books/leading-edge-chaos/"
+    ],
+    [
+     "Learning as a Way of Being",
+     "/teams/books/learning-as-a-way-of-being/"
+    ],
+    [
+     "Managing At the Speed of Change",
+     "/teams/books/speed-of-change/"
+    ],
+    [
+     "Managing Conflict",
+     "/teams/books/managing-conflict/"
+    ],
+    [
+     "The Seven Spiritual Laws of Success",
+     "/teams/books/seven-spiritual-laws/"
+    ],
+    [
+     "Sitting In The Fire",
+     "/teams/books/sitting-in-the-fire/"
+    ],
+    [
+     "Skilled Facilitator",
+     "/teams/books/skilled-facilitator/"
+    ],
+    [
+     "The Third Wave",
+     "/teams/books/the-third-wave/"
+    ],
+    [
+     "True North",
+     "/teams/books/true-north/"
+    ],
+    [
+     "The Web Of Life",
+     "/teams/books/the-web-of-life/"
+    ],
+    [
+     "Visionary Leadership",
+     "/teams/books/visionary-leadership/"
+    ],
+    [
+     "Working With Emotional Intelligence",
+     "/teams/books/emotional-intelligence/"
+    ]
+   ]
+  },
+  "m9": {
+   "title": "The Heart of Change",
+   "links": [
+    [
+     "Getting the Bosses’ Approval",
+     "/teams/books/heart-of-change/bosses-approval/"
+    ],
+    [
+     "Gloves on the Boardroom Table",
+     "/teams/books/heart-of-change/gloves-on-boardroom-table/"
+    ],
+    [
+     "The Home Mortgage",
+     "/teams/books/heart-of-change/home-mortgage/"
+    ],
+    [
+     "The Merchant of Fear",
+     "/teams/books/heart-of-change/merchant-of-fear/"
+    ],
+    [
+     "Promoting the Thirty-Something",
+     "/teams/books/heart-of-change/promoting-30-something/"
+    ],
+    [
+     "The Videotape of the Angry Customer",
+     "/teams/books/heart-of-change/videotape-angry-customer/"
+    ]
+   ]
+  },
+  "m10": {
+   "title": "Other Books",
+   "links": [
+    [
+     "The Advantage",
+     "/teams/books/the-advantage/"
+    ],
+    [
+     "The Five Dysfunctions of a Team",
+     "/teams/books/five-dysfunctions/"
+    ],
+    [
+     "The Adult Learner",
+     "/teams/books/adult-learner/"
+    ],
+    [
+     "The Beauty of the Beast",
+     "/teams/books/the-beauty-of-the-beast/"
+    ],
+    [
+     "Beyond Rational Management",
+     "/teams/books/beyond-rational-management/"
+    ],
+    [
+     "Built to Last",
+     "/teams/books/built-to-last/"
+    ],
+    [
+     "The Charge",
+     "/teams/books/the-charge/"
+    ],
+    [
+     "Core Communication Skills and Process",
+     "/teams/books/core-communication-skills-and-process/"
+    ],
+    [
+     "Difficult Conversations",
+     "/teams/books/difficult-conversations/"
+    ],
+    [
+     "The Divine Matrix",
+     "/teams/books/divine-matrix/"
+    ],
+    [
+     "Driving Fear out of the Workplace",
+     "/teams/books/driving-fear-out-of-the-workplace/"
+    ],
+    [
+     "Emotional Alchemy",
+     "/teams/books/emotional-alchemy/"
+    ],
+    [
+     "Extraordinary Relationships (Gilbert)",
+     "/teams/books/extraordinary-relationships/"
+    ],
+    [
+     "The Fifth Dicipline",
+     "/teams/books/the-fifth-dicipline/"
+    ],
+    [
+     "Leadership on the Line",
+     "/teams/books/leadership-on-the-line/"
+    ],
+    [
+     "Flawless Consulting",
+     "/teams/books/flawless-consulting/"
+    ],
+    [
+     "Getting to Yes (Outline)",
+     "/teams/books/getting-toyes/"
+    ],
+    [
+     "The Gift Of Therapy",
+     "/teams/books/the-gift-of-therapy/"
+    ],
+    [
+     "Good To Great",
+     "/teams/books/good-to-great/"
+    ],
+    [
+     "The Handbook of Emotionally Intelligent Leadership",
+     "/teams/books/emotionally-intelligent-leadership/"
+    ],
+    [
+     "The Heart Of Change",
+     "/teams/books/heart-of-change/"
+    ],
+    [
+     "High Impact Consulting",
+     "/teams/books/high-impact-consulting/"
+    ],
+    [
+     "How To Win Friends & Influence People",
+     "/teams/books/win-friends-influence-people/"
+    ],
+    [
+     "If God Had Meant Man to Fly, He Would Have Given Him Wings",
+     "/teams/books/if-god-had-meant-man-to-fly/"
+    ],
+    [
+     "Influencer",
+     "/teams/books/influencer/"
+    ],
+    [
+     "The Intimacy Paradox",
+     "/teams/books/intimacy-paradox/"
+    ],
+    [
+     "Leadership and the One Minute Manager",
+     "/teams/books/one-minute-manager/"
+    ],
+    [
+     "Leadership and the New Science",
+     "/teams/books/leadership-new-science/"
+    ],
+    [
+     "Leadership Without Easy Answers",
+     "/teams/books/leadership-without-easy-answers/"
+    ],
+    [
+     "Leading at the Edge of Chaos",
+     "/teams/books/leading-edge-chaos/"
+    ],
+    [
+     "Learning as a Way of Being",
+     "/teams/books/learning-as-a-way-of-being/"
+    ],
+    [
+     "Managing At the Speed of Change",
+     "/teams/books/speed-of-change/"
+    ],
+    [
+     "Managing Conflict",
+     "/teams/books/managing-conflict/"
+    ],
+    [
+     "The Seven Spiritual Laws of Success",
+     "/teams/books/seven-spiritual-laws/"
+    ],
+    [
+     "Sitting In The Fire",
+     "/teams/books/sitting-in-the-fire/"
+    ],
+    [
+     "Skilled Facilitator",
+     "/teams/books/skilled-facilitator/"
+    ],
+    [
+     "The Third Wave",
+     "/teams/books/the-third-wave/"
+    ],
+    [
+     "True North",
+     "/teams/books/true-north/"
+    ],
+    [
+     "The Web Of Life",
+     "/teams/books/the-web-of-life/"
+    ],
+    [
+     "Visionary Leadership",
+     "/teams/books/visionary-leadership/"
+    ],
+    [
+     "Working With Emotional Intelligence",
+     "/teams/books/emotional-intelligence/"
+    ]
+   ]
+  },
+  "m11": {
+   "title": "Leading Edge of Chaos",
+   "links": [
+    [
+     "Notes from the text",
+     "/teams/books/leading-edge-chaos/"
+    ],
+    [
+     "Adaptation Reflex",
+     "/teams/books/leading-edge-chaos/adaptation-reflex/"
+    ],
+    [
+     "Building Blocks of Empowerment",
+     "/teams/books/leading-edge-chaos/empowerment/"
+    ],
+    [
+     "Change Leadership Styles",
+     "/teams/books/leading-edge-chaos/change-leadership-styles/"
+    ],
+    [
+     "Change Load",
+     "/teams/books/leading-edge-chaos/change-load/"
+    ],
+    [
+     "The Do’s and Don’ts of Ongoing Turbulence",
+     "/teams/books/leading-edge-chaos/do-and-dont-of-turbulence/"
+    ],
+    [
+     "Future Shock",
+     "/teams/books/leading-edge-chaos/future-shock/"
+    ],
+    [
+     "Interview Questions – Behavior",
+     "/teams/books/leading-edge-chaos/behavioral-interview-questions/"
+    ],
+    [
+     "Interview Questions – Change",
+     "/teams/books/leading-edge-chaos/interview-questions/"
+    ],
+    [
+     "Operationalizing Human Due Diligence",
+     "/teams/books/leading-edge-chaos/operationalize-human-due-diligence/"
+    ]
+   ]
+  },
+  "m12": {
+   "title": "Skilled Facilitator",
+   "links": [
+    [
+     "Core Values of “The Skilled Facilitator”",
+     "/teams/books/skilled-facilitator/core-values/"
+    ],
+    [
+     "Ground Rules for Effective Groups",
+     "/teams/books/skilled-facilitator/ground-rules/"
+    ],
+    [
+     "The Ladder of Inference",
+     "/teams/books/skilled-facilitator/ladder-of-inference/"
+    ],
+    [
+     "Mutual Learning Model",
+     "/teams/books/skilled-facilitator/mutual-learning/"
+    ],
+    [
+     "Reframing What Feedback Means",
+     "/teams/books/skilled-facilitator/feedback/"
+    ],
+    [
+     "Group Effectiveness Criteria",
+     "/teams/books/skilled-facilitator/effectiveness-checklist/"
+    ],
+    [
+     "Group Effectiveness Model",
+     "/teams/books/skilled-facilitator/effectiveness/"
+    ],
+    [
+     "Unilateral Control Model",
+     "/teams/books/skilled-facilitator/unilateral-control/"
+    ],
+    [
+     "Roger Schwarz & Associates, Inc",
+     "https://schwarzassociates.com/"
+    ],
+    [
+     "Diagnostic Intervention Cycle",
+     "/teams/books/skilled-facilitator/"
+    ]
+   ]
+  },
+  "m13": {
+   "title": "Speed of Change",
+   "links": [
+    [
+     "Profiles of Advocacy",
+     "/teams/books/speed-of-change/advocate-roles/"
+    ],
+    [
+     "Sponsorship of Change",
+     "/teams/books/speed-of-change/sponsorship/"
+    ],
+    [
+     "Sponsors, Targets, Change Agents, and Advocates",
+     "/teams/books/speed-of-change/sponsor-target-agent-adovcate/"
+    ],
+    [
+     "Positive Response To Change",
+     "/teams/books/speed-of-change/positive-response/"
+    ],
+    [
+     "Negative Response To Change",
+     "/teams/books/speed-of-change/negative-response/"
+    ],
+    [
+     "Stages of Change Commitment",
+     "/teams/books/speed-of-change/stages/"
+    ],
+    [
+     "Contact",
+     "/teams/books/speed-of-change/stages/contact/"
+    ],
+    [
+     "Awareness",
+     "/teams/books/speed-of-change/stages/awareness/"
+    ],
+    [
+     "Understanding",
+     "/teams/books/speed-of-change/stages/understanding/"
+    ],
+    [
+     "Positive Perception",
+     "/teams/books/speed-of-change/stages/positive-perception/"
+    ],
+    [
+     "Installation",
+     "/teams/books/speed-of-change/install/"
+    ],
+    [
+     "Adoption",
+     "/teams/books/speed-of-change/adopt/"
+    ],
+    [
+     "Text Notes",
+     "/teams/books/speed-of-change/"
+    ]
+   ]
+  },
+  "m14": {
+   "title": "What Leaders Really Do",
+   "links": [
+    [
+     "Managerial Behavior",
+     "/teams/books/what-leaders-really-do/10-observations-on-managerial-behavior/"
+    ],
+    [
+     "Methods for Dealing with Resistance to Change",
+     "/teams/books/what-leaders-really-do/managing-resistance/"
+    ],
+    [
+     "Text Excerpts",
+     "/teams/books/what-leaders-really-do/"
+    ]
+   ]
+  },
+  "m15": {
+   "title": "",
+   "links": [
+    [
+     "Digital Marketing",
+     "/marketing/"
+    ],
+    [
+     "Leadership Coaching",
+     "/leadership/"
+    ],
+    [
+     "Team Development",
+     "/"
+    ],
+    [
+     "Blog",
+     "/blog/"
+    ],
+    [
+     "Privacy",
+     "/legal/privacy-policy/"
+    ]
+   ]
+  },
+  "m16": {
+   "title": "",
+   "links": [
+    [
+     "Books & Articles",
+     "/teams/books/"
+    ],
+    [
+     "Book Reviews",
+     "/teams/books/"
+    ],
+    [
+     "Article Reviews & Links",
+     "/teams/articles/"
+    ],
+    [
+     "Appreciative Inquiry",
+     "/teams/appreciative-inquiry/"
+    ],
+    [
+     "Cross Functional Teams",
+     "/teams/articles/cross-functional-teams/"
+    ],
+    [
+     "Sustainability",
+     "/teams/articles/sustainability/"
+    ],
+    [
+     "Group Dynamics",
+     "/teams/group/"
+    ],
+    [
+     "Models & Instruments",
+     "/teams/models/"
+    ],
+    [
+     "Models",
+     "/teams/models/"
+    ],
+    [
+     "Instruments",
+     "/teams/instruments/"
+    ],
+    [
+     "Diagrams",
+     "/teams/diagrams/"
+    ],
+    [
+     "Other",
+     "/teams/general/"
+    ],
+    [
+     "General Topics",
+     "/teams/general/"
+    ],
+    [
+     "Interactive Activities",
+     "/teams/activities/"
+    ],
+    [
+     "External Links",
+     "/teams/links/"
+    ],
+    [
+     "Leadership Quotes",
+     "/teams/general/leadership-quotes/"
+    ],
+    [
+     "Anti-Leadership Quotes",
+     "/teams/links/anti-leadership/"
+    ]
+   ]
+  },
+  "m17": {
+   "title": "Conflict",
+   "links": [
+    [
+     "Decision Making Styles",
+     "/teams/models/decision-making-styles/"
+    ],
+    [
+     "Waterline Model",
+     "/teams/models/waterline/"
+    ],
+    [
+     "Form, Storm, Norm, Perform (Tuckman)",
+     "/teams/group/tuckman/"
+    ],
+    [
+     "Conflict Management (Jay Hall)",
+     "/teams/diagrams/conflict-management/"
+    ],
+    [
+     "Pinch Model of Conflict",
+     "/teams/diagrams/pinch-model/"
+    ],
+    [
+     "The Third Side",
+     "/teams/diagrams/third-side/"
+    ],
+    [
+     "Thomas-Kilmann Conflict Instrument Diagram (TKI)",
+     "/teams/group/thomas-kilmann/"
+    ],
+    [
+     "VOMP – Model of Conflict Resolution",
+     "/teams/models/vomp/"
+    ],
+    [
+     "Managing Conflict (Walton)",
+     "/teams/books/managing-conflict/"
+    ]
+   ]
+  },
+  "m18": {
+   "title": "Group Dynamics",
+   "links": [
+    [
+     "Development Stages (Webber)",
+     "/teams/group/group-development-stages/"
+    ],
+    [
+     "Form, Storm, Norm, Perform (Tuckman)",
+     "/teams/group/tuckman/"
+    ],
+    [
+     "Group Norms",
+     "/teams/group/norms/"
+    ],
+    [
+     "Decision Making Styles",
+     "/teams/models/decision-making-styles/"
+    ],
+    [
+     "Differentiation Behavior Inventory",
+     "/teams/group/differentiation-inventory/"
+    ],
+    [
+     "FIRO-B (Schults)",
+     "/teams/models/firo-b/"
+    ],
+    [
+     "Ground Rules for Effective Groups",
+     "/teams/books/skilled-facilitator/ground-rules/"
+    ],
+    [
+     "Group Dilemmas",
+     "/teams/group/group-dilemas/"
+    ],
+    [
+     "Group Effectiveness Criteria",
+     "/teams/books/skilled-facilitator/effectiveness-checklist/"
+    ],
+    [
+     "Self Differentiation vs. Relationship Orientation",
+     "/teams/group/differentiation-vs-relationship/"
+    ],
+    [
+     "Stage Appropriate Support and Interventions",
+     "/teams/group/stage-appropriate-interventions/"
+    ],
+    [
+     "Systemic Intervention Principles",
+     "/teams/group/systemic-intervention/"
+    ],
+    [
+     "Theory on Stages in Group Development",
+     "/teams/group/theory-of-concerns/"
+    ],
+    [
+     "Trust and Risk Taking and Group Life",
+     "/teams/group/trust-and-risk-taking-and-group-life/"
+    ],
+    [
+     "Waterline Model",
+     "/teams/models/waterline/"
+    ],
+    [
+     "VOMP – Model of Conflict Resolution",
+     "/teams/models/vomp/"
+    ]
+   ]
+  },
+  "m19": {
+   "title": "Instruments & Assessment Tools",
+   "links": [
+    [
+     "FIRO-B (Schults)",
+     "/teams/models/firo-b/"
+    ],
+    [
+     "Strength Deployment Inventory",
+     "https://www.corestrengths.com/"
+    ],
+    [
+     "Enneagram",
+     "http://www.9types.com/"
+    ],
+    [
+     "Online Personality and Career Tests",
+     "https://discoveryourpersonality.com/"
+    ]
+   ]
+  },
+  "m20": {
+   "title": "Other Links of Interest",
+   "links": [
+    [
+     "12Manage – All you need to know about management",
+     "https://www.12manage.com/"
+    ],
+    [
+     "Anit-Leadership Quotes",
+     "/teams/links/anti-leadership/"
+    ],
+    [
+     "Epistemology",
+     "/teams/links/epistemology/"
+    ],
+    [
+     "Harvard Business School “Working Knowledge”",
+     "https://www.library.hbs.edu/working-knowledge"
+    ],
+    [
+     "Other Organizations",
+     "/teams/links/organizations/"
+    ],
+    [
+     "Thesis Writing Tools",
+     "/teams/links/thesis-tools/"
+    ],
+    [
+     "Principia Cybernetica Web",
+     "http://pespmc1.vub.ac.be/"
+    ],
+    [
+     "Systems Thinking (“The Way”)",
+     "http://www.systems-thinking.org/theWay/theWay.htm"
+    ]
+   ]
+  },
+  "m21": {
+   "title": "Models & Instruments",
+   "links": [
+    [
+     "7S Model",
+     "/teams/models/seven-s/"
+    ],
+    [
+     "Apple Facilitation Model",
+     "/teams/models/apple-facilitation-model/"
+    ],
+    [
+     "Awareness Wheel (Miller & Sherod)",
+     "/teams/models/awareness-wheel/"
+    ],
+    [
+     "Center/Margin Theory (Hooks)",
+     "/teams/models/center-margin/"
+    ],
+    [
+     "Decision Making Styles",
+     "/teams/models/decision-making-styles/"
+    ],
+    [
+     "FIRO-B (Schults)",
+     "/teams/models/firo-b/"
+    ],
+    [
+     "Humanistic Psychology (Rogers)",
+     "/teams/models/rogers/"
+    ],
+    [
+     "Integrity Model (Webber & Leahy)",
+     "/teams/models/integrity/"
+    ],
+    [
+     "Interpersonal Gap (Wallen)",
+     "/teams/models/interpersonal-gap/"
+    ],
+    [
+     "Intervention Cube",
+     "/teams/models/intervention-cube/"
+    ],
+    [
+     "The Johari Window (Luft & Ingham)",
+     "/teams/models/johari-window/"
+    ],
+    [
+     "Learning Style Inventory (Kolb)",
+     "/teams/models/learning-styles/"
+    ],
+    [
+     "The Learning Curve",
+     "/teams/models/learning-curve/"
+    ],
+    [
+     "Mutual Learning Model (Schwarz)",
+     "/teams/books/skilled-facilitator/mutual-learning/"
+    ],
+    [
+     "Ostrom’s Model",
+     "/teams/models/ostrom/"
+    ],
+    [
+     "Seven Skills (Carkhuff)",
+     "/teams/models/carkhuff/"
+    ],
+    [
+     "Unilateral Control (Schwarz)",
+     "/teams/books/skilled-facilitator/unilateral-control/"
+    ],
+    [
+     "Waterline Model ((Harrison, Scherer, Short))",
+     "/teams/models/waterline/"
+    ]
+   ]
+  }
+ },
+ "pages": {
+  "/": [
+   "m1"
+  ],
+  "/12-week-mastery/": [],
+  "/about/": [],
+  "/about/calendar/": [],
+  "/about/contact/": [],
+  "/about/guiding-principles/": [],
+  "/angles-within-us/": [],
+  "/assessing-visual-designs-using-data/": [],
+  "/blind-spot-in-want-ads/": [],
+  "/blog/": [],
+  "/coaching/": [
+   "m2",
+   "m3"
+  ],
+  "/competence-based-training/": [],
+  "/conflict/": [
+   "m2",
+   "m3"
+  ],
+  "/conversations-for-action/": [
+   "m2",
+   "m3"
+  ],
+  "/dangers-duplicate-content/": [],
+  "/delayed-satisfaction/": [],
+  "/distinguishing-thoughts-from-feelings/": [],
+  "/dont-become-a-marketer/": [],
+  "/dont-read-this/": [],
+  "/emergency-maneuvers-as-a-metaphor-for-transformation/": [],
+  "/enough-copy-paste/": [],
+  "/fear/": [],
+  "/geru-and-storybrand/": [],
+  "/i-create-i-have-be-cause/": [],
+  "/i-identify-as-a-tesla/": [],
+  "/intro/": [
+   "m1"
+  ],
+  "/is-a-lack-or-fear-of-conflict-really-a-dysfunction-of-a-team/": [],
+  "/is-business-coaching-worth-the-money-bmsu/": [],
+  "/is-business-coaching-worth-the-money-chpc/": [],
+  "/is-business-coaching-worth-the-money-icf/": [],
+  "/is-business-coaching-worth-the-money-igl/": [],
+  "/knowing-enough/": [],
+  "/lean-in-to-the-alligator/": [],
+  "/legal/": [
+   "m1"
+  ],
+  "/legal/disclaimer/": [],
+  "/legal/privacy-policy/": [],
+  "/legal/terms-and-conditions/": [
+   "m1"
+  ],
+  "/legal/terms-of-use/": [
+   "m1"
+  ],
+  "/lions-and-elephants/": [],
+  "/login/full-access-request/": [
+   "m1"
+  ],
+  "/louder-and-slower/": [],
+  "/making-bigger-promises/": [
+   "m2",
+   "m3"
+  ],
+  "/making-sales-without-being-salesy/": [],
+  "/managed-action-practice/": [],
+  "/mental-anti-virus/": [],
+  "/moving-forward/": [],
+  "/offers/": [
+   "m1"
+  ],
+  "/offers/brandscripts-made-simple/client-instructions/": [],
+  "/offers/brandscripts-made-simple/guide-instructions/": [],
+  "/personal-hedgehog-concept/": [],
+  "/pick-yourself-first/": [],
+  "/promise-search-engine-optimization/": [],
+  "/qr/": [],
+  "/recipe-for-change/": [],
+  "/reduce-breakdowns/": [
+   "m1"
+  ],
+  "/reduce-breakdowns/conflict/": [
+   "m1"
+  ],
+  "/reduce-breakdowns/strategic-alignment/": [
+   "m1"
+  ],
+  "/riding-with-the-brakes-on/": [],
+  "/save-a-kitten/": [],
+  "/shop/": [
+   "m2",
+   "m3"
+  ],
+  "/small-steps/": [],
+  "/start-with-why/": [],
+  "/stopped-by-apple/": [],
+  "/storybrand-certified-guide-review/": [],
+  "/storybrand-failure-infusionsoft-keap/": [],
+  "/storybrand-success-stella-artois-water/": [],
+  "/superficial-mission-statements/": [],
+  "/superheros/": [],
+  "/take-the-first-step/": [],
+  "/teams/activities/": [
+   "m2",
+   "m3"
+  ],
+  "/teams/activities/diversity-workshop/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/index-card-towers/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/laughing-game/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/look/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/maintaining-patterns/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/pulse/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/shakeout/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/signature-competence/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/sugar-cube-towers/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/activities/two-headed-wolf/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/appreciative-inquiry/": [
+   "m2",
+   "m3"
+  ],
+  "/teams/appreciative-inquiry/affirmative-basis-of-organization/": [
+   "m2",
+   "m3"
+  ],
+  "/teams/appreciative-inquiry/appreciative-eye-critical-eye/": [
+   "m2",
+   "m3"
+  ],
+  "/teams/appreciative-inquiry/appreciative-inquiry-exercise/": [
+   "m4",
+   "m3"
+  ],
+  "/teams/articles/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/cross-functional-teams/": [
+   "m6",
+   "m3"
+  ],
+  "/teams/articles/cross-functional-teams/social-loafing/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/decision-making/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/e-mail-escalation/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/groupthink-challenger-shuttle/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/individual-and-organizational-learning/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/articles/sustainability/": [
+   "m7",
+   "m3"
+  ],
+  "/teams/articles/sustainability/audit-questions/": [
+   "m7",
+   "m3"
+  ],
+  "/teams/articles/sustainability/natural-step/": [
+   "m7",
+   "m3"
+  ],
+  "/teams/articles/sustainability/sustaining-human-communities/": [
+   "m7",
+   "m3"
+  ],
+  "/teams/articles/towards-the-differentiation-of-a-self-in-ones-own-family/": [
+   "m5",
+   "m3"
+  ],
+  "/teams/books/": [
+   "m8"
+  ],
+  "/teams/books/adult-learner/": [
+   "m8"
+  ],
+  "/teams/books/beyond-rational-management/": [
+   "m8"
+  ],
+  "/teams/books/built-to-last/": [
+   "m8"
+  ],
+  "/teams/books/core-communication-skills-and-process/": [
+   "m8"
+  ],
+  "/teams/books/difficult-conversations/": [
+   "m8"
+  ],
+  "/teams/books/difficult-conversations/checklist/": [
+   "m8"
+  ],
+  "/teams/books/divine-matrix/": [
+   "m8"
+  ],
+  "/teams/books/driving-fear-out-of-the-workplace/": [
+   "m8"
+  ],
+  "/teams/books/emotional-alchemy/": [
+   "m8"
+  ],
+  "/teams/books/emotional-intelligence/": [
+   "m8"
+  ],
+  "/teams/books/emotionally-intelligent-leadership/": [
+   "m8"
+  ],
+  "/teams/books/extraordinary-relationships/": [
+   "m8"
+  ],
+  "/teams/books/five-dysfunctions/": [
+   "m8"
+  ],
+  "/teams/books/five-dysfunctions/notes/": [
+   "m8"
+  ],
+  "/teams/books/flawless-consulting/": [
+   "m8"
+  ],
+  "/teams/books/flawless-consulting/expert-hands-collaborate/": [
+   "m8"
+  ],
+  "/teams/books/getting-toyes/": [
+   "m8"
+  ],
+  "/teams/books/good-to-great/": [
+   "m8"
+  ],
+  "/teams/books/heart-of-change/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/bosses-approval/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/gloves-on-boardroom-table/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/home-mortgage/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/merchant-of-fear/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/promoting-30-something/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/heart-of-change/videotape-angry-customer/": [
+   "m9",
+   "m10"
+  ],
+  "/teams/books/high-impact-consulting/": [
+   "m8"
+  ],
+  "/teams/books/high-impact-consulting/making-demands/": [
+   "m8"
+  ],
+  "/teams/books/if-god-had-meant-man-to-fly/": [
+   "m8"
+  ],
+  "/teams/books/influencer/": [
+   "m8"
+  ],
+  "/teams/books/intimacy-paradox/": [
+   "m8"
+  ],
+  "/teams/books/intimacy-paradox/foo-interview-questions/": [
+   "m8"
+  ],
+  "/teams/books/leadership-new-science/": [
+   "m8"
+  ],
+  "/teams/books/leadership-on-the-line/": [
+   "m8"
+  ],
+  "/teams/books/leadership-without-easy-answers/": [
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/adaptation-reflex/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/behavioral-interview-questions/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/change-leadership-styles/": [],
+  "/teams/books/leading-edge-chaos/change-load/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/do-and-dont-of-turbulence/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/empowerment/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/future-shock/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/interview-questions/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/leading-edge-chaos/operationalize-human-due-diligence/": [
+   "m11",
+   "m8"
+  ],
+  "/teams/books/learning-as-a-way-of-being/": [
+   "m8"
+  ],
+  "/teams/books/managing-conflict/": [
+   "m8"
+  ],
+  "/teams/books/one-minute-manager/": [
+   "m8"
+  ],
+  "/teams/books/seven-spiritual-laws/": [
+   "m8"
+  ],
+  "/teams/books/sitting-in-the-fire/": [
+   "m8"
+  ],
+  "/teams/books/skilled-facilitator/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/core-values/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/effectiveness-checklist/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/effectiveness/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/feedback/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/ground-rules/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/ladder-of-inference/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/mutual-learning/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/skilled-facilitator/unilateral-control/": [
+   "m12",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/adopt/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/advocate-roles/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/install/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/negative-response/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/positive-response/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/sponsor-target-agent-adovcate/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/sponsorship/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/stages/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/stages/awareness/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/stages/contact/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/stages/positive-perception/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/speed-of-change/stages/understanding/": [
+   "m13",
+   "m10"
+  ],
+  "/teams/books/the-advantage/": [
+   "m8"
+  ],
+  "/teams/books/the-beauty-of-the-beast/": [
+   "m8"
+  ],
+  "/teams/books/the-charge/": [
+   "m8"
+  ],
+  "/teams/books/the-fifth-dicipline/": [
+   "m8"
+  ],
+  "/teams/books/the-fifth-dicipline/learning-disciplines/": [
+   "m8"
+  ],
+  "/teams/books/the-gift-of-therapy/": [
+   "m8"
+  ],
+  "/teams/books/the-leadership-dojo/": [
+   "m8"
+  ],
+  "/teams/books/the-leadership-dojo/stand/": [
+   "m8"
+  ],
+  "/teams/books/the-third-wave/": [
+   "m8"
+  ],
+  "/teams/books/the-web-of-life/": [
+   "m8"
+  ],
+  "/teams/books/true-north/": [
+   "m8"
+  ],
+  "/teams/books/true-north/leadership-style-power-grid/": [
+   "m8"
+  ],
+  "/teams/books/visionary-leadership/": [
+   "m8"
+  ],
+  "/teams/books/what-leaders-really-do/": [
+   "m14",
+   "m10"
+  ],
+  "/teams/books/what-leaders-really-do/10-observations-on-managerial-behavior/": [
+   "m14",
+   "m10"
+  ],
+  "/teams/books/what-leaders-really-do/managing-resistance/": [
+   "m14",
+   "m10"
+  ],
+  "/teams/books/win-friends-influence-people/": [
+   "m8"
+  ],
+  "/teams/diagrams/": [],
+  "/teams/diagrams/adaptation-reflex/": [],
+  "/teams/diagrams/adaptive-range/": [],
+  "/teams/diagrams/androgogy-model/": [],
+  "/teams/diagrams/attitude-framing/": [],
+  "/teams/diagrams/be-here-now/": [],
+  "/teams/diagrams/blumburg-model/": [],
+  "/teams/diagrams/center-margin/": [],
+  "/teams/diagrams/change-load/": [],
+  "/teams/diagrams/circle-of-influence/": [],
+  "/teams/diagrams/conflict-management/": [],
+  "/teams/diagrams/cycle-of-mistrust/": [],
+  "/teams/diagrams/decision-making/": [],
+  "/teams/diagrams/diagnostic-intervention-cycle/": [],
+  "/teams/diagrams/doom-loop/": [],
+  "/teams/diagrams/firo-b-schutz/": [],
+  "/teams/diagrams/flywheel-effect/": [],
+  "/teams/diagrams/group-effectiveness/": [],
+  "/teams/diagrams/hedgehog-concept/": [],
+  "/teams/diagrams/intervention-cube/": [],
+  "/teams/diagrams/ip-gap/": [],
+  "/teams/diagrams/leadership-culture-structure-process/": [],
+  "/teams/diagrams/leadership-impact/": [],
+  "/teams/diagrams/leadership-roles/": [],
+  "/teams/diagrams/leadership-wheel/": [],
+  "/teams/diagrams/learning-curve/": [],
+  "/teams/diagrams/lifecycles-of-groups/": [],
+  "/teams/diagrams/lsi/": [
+   "m15",
+   "m16"
+  ],
+  "/teams/diagrams/mentorcoachfriend/": [],
+  "/teams/diagrams/motivated-capabilities/": [],
+  "/teams/diagrams/observable-data/": [],
+  "/teams/diagrams/p4/": [],
+  "/teams/diagrams/pinch-model/": [],
+  "/teams/diagrams/questions-lead-change/": [],
+  "/teams/diagrams/sense-though-temotion-feeling/": [],
+  "/teams/diagrams/synergy/": [],
+  "/teams/diagrams/theory-functional-self/": [],
+  "/teams/diagrams/third-side/": [],
+  "/teams/diagrams/thomas-kilmann/": [],
+  "/teams/diagrams/true-north/": [],
+  "/teams/diagrams/vision-goals-strategies/": [],
+  "/teams/general/": [],
+  "/teams/general/abilene-paradox/": [
+   "m3"
+  ],
+  "/teams/general/change/": [],
+  "/teams/general/change/readiness-formula/": [
+   "m3"
+  ],
+  "/teams/general/change/why-change-fails/": [
+   "m3"
+  ],
+  "/teams/general/characteristics-of-culture/": [
+   "m3"
+  ],
+  "/teams/general/constructive-feedback/": [
+   "m3"
+  ],
+  "/teams/general/defense-mechanisms/": [
+   "m3"
+  ],
+  "/teams/general/feedback/": [
+   "m3"
+  ],
+  "/teams/general/feeling-words/": [
+   "m3"
+  ],
+  "/teams/general/leadership-quotes/": [],
+  "/teams/general/meaning-making/": [
+   "m3"
+  ],
+  "/teams/general/performance-variables/": [
+   "m3"
+  ],
+  "/teams/general/self-soothing/": [
+   "m3"
+  ],
+  "/teams/general/skill-will-matrix/": [
+   "m3"
+  ],
+  "/teams/general/wants-and-offers-matrix/": [
+   "m3"
+  ],
+  "/teams/group/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/differentiation-inventory/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/differentiation-vs-relationship/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/group-development-stages/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/group-dilemas/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/norms/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/stage-appropriate-interventions/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/systemic-intervention/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/theory-of-concerns/": [],
+  "/teams/group/trust-and-risk-taking-and-group-life/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/group/tuckman/": [
+   "m17",
+   "m18"
+  ],
+  "/teams/instruments/": [
+   "m19"
+  ],
+  "/teams/links/": [
+   "m20",
+   "m3"
+  ],
+  "/teams/links/anti-leadership/": [],
+  "/teams/links/epistemology/": [
+   "m20",
+   "m3"
+  ],
+  "/teams/links/organizations/": [
+   "m20",
+   "m3"
+  ],
+  "/teams/links/thesis-tools/": [
+   "m20",
+   "m3"
+  ],
+  "/teams/models/": [
+   "m21"
+  ],
+  "/teams/models/apple-facilitation-model/": [
+   "m21"
+  ],
+  "/teams/models/awareness-wheel/": [
+   "m21"
+  ],
+  "/teams/models/carkhuff/": [
+   "m21"
+  ],
+  "/teams/models/center-margin/": [
+   "m21"
+  ],
+  "/teams/models/decision-making-styles/": [
+   "m21"
+  ],
+  "/teams/models/firo-b/": [
+   "m21"
+  ],
+  "/teams/models/integrity/": [
+   "m21"
+  ],
+  "/teams/models/interpersonal-gap/": [
+   "m21"
+  ],
+  "/teams/models/intervention-cube/": [
+   "m21"
+  ],
+  "/teams/models/johari-window/": [
+   "m21"
+  ],
+  "/teams/models/learning-curve/": [
+   "m21"
+  ],
+  "/teams/models/learning-styles/": [
+   "m21"
+  ],
+  "/teams/models/ostrom/": [
+   "m21"
+  ],
+  "/teams/models/rogers/": [
+   "m21"
+  ],
+  "/teams/models/seven-s/": [
+   "m21"
+  ],
+  "/teams/models/vomp/": [
+   "m21"
+  ],
+  "/teams/models/waterline/": [
+   "m21"
+  ],
+  "/tell-a-good-story/": [],
+  "/tesla-offers-premium-electricity/": [],
+  "/thank-you/": [
+   "m1"
+  ],
+  "/thank-you/10-conversations/": [],
+  "/thank-you/7-elements-thank-you/": [
+   "m1"
+  ],
+  "/thank-you/business-made-simple-consult/": [],
+  "/thank-you/business-mri/": [],
+  "/thank-you/generative-marketing/": [
+   "m1"
+  ],
+  "/thank-you/infusionsoft-consultation/": [
+   "m1"
+  ],
+  "/thank-you/marketing-consult/": [
+   "m1"
+  ],
+  "/thank-you/six-campaign-improvements/": [
+   "m1"
+  ],
+  "/thank-you/whistle-demo/": [],
+  "/the-automation-of-noise/": [],
+  "/the-marketing-results-framework/": [],
+  "/the-quest-for-healthy-organizations/": [],
+  "/theory/": [
+   "m2",
+   "m3"
+  ],
+  "/theory/conflict/": [
+   "m1"
+  ],
+  "/theory/creating/": [
+   "m1"
+  ],
+  "/theory/learning/": [
+   "m1"
+  ],
+  "/theory/passion/": [
+   "m1"
+  ],
+  "/theory/playing/": [
+   "m1"
+  ],
+  "/tree-talk/": [],
+  "/unsolvable-problems/": [],
+  "/vision/": [
+   "m1"
+  ],
+  "/vision/test/": [
+   "m1"
+  ],
+  "/wasting-your-marketing-budget/": [],
+  "/what-distinguishes-between-coach-mentor-and-friend/": [],
+  "/what-if-it-works/": [],
+  "/where-do-you-stop/": [],
+  "/who-wins-the-battle-of-truth-vs-story/": [],
+  "/why-accountability-groups-fail/": [],
+  "/why-i-dont-do-my-best-work/": [],
+  "/why-use-the-superhuman-email-client/": [],
+  "/your-expertise-wont-grow-your-business/": [],
+  "/your-marketing-journey/": []
+ }
+}
