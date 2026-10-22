@@ -11,6 +11,7 @@ that only make sense on WordPress (shop, checkout, membership/login, forms).
 Author e-mail addresses and the like are never copied. Do not commit the raw
 export file. Standard library only.
 """
+import html
 import json
 import os
 import re
@@ -76,6 +77,27 @@ def text(el, tag):
     return el.findtext(tag, namespaces=NS) or ''
 
 
+def postmeta(it):
+    return {text(m, 'wp:meta_key'): text(m, 'wp:meta_value') for m in it.findall('wp:postmeta', NS)}
+
+
+def seo_title(pm, title, sitename):
+    """The <title> the live site (Rank Math) used: a custom one, or "<title> - <site name>"."""
+    t = (pm.get('rank_math_title') or '').strip() or '%title% %sep% %sitename%'
+    return html.unescape(t.replace('%title%', title).replace('%sep%', '-').replace('%sitename%', sitename))
+
+
+def seo_description(pm, body):
+    """A custom description if one was written, else the first ~160 characters of the text (as Rank Math does)."""
+    d = (pm.get('rank_math_description') or '').strip()
+    if d:
+        return html.unescape(d)
+    s = re.sub(r'<(script|style)\b.*?</\1>|<!--.*?-->', '', body, flags=re.S)
+    s = html.unescape(re.sub(r'<[^>]+>', ' ', s)).replace('\xa0', ' ')
+    s = re.sub(r'\s+', ' ', s).strip()
+    return s if len(s) <= 160 else s[:160].rsplit(' ', 1)[0].rstrip(' ,;:')
+
+
 def path_of(it):
     return urlparse(it.findtext('link') or '').path or '/'
 
@@ -103,6 +125,9 @@ def main(xml_path, out_dir):
     tp_by_order = [json.loads(text(it, 'content:encoded')) for it in tp_posts
                    if text(it, 'content:encoded').startswith('[')]
 
+    sitename = ch.findtext('title') or ''
+    attachments = {text(it, 'wp:post_id'): re.sub(OLD_HOSTS, '', text(it, 'wp:attachment_url'))
+                   for it in items if text(it, 'wp:post_type') == 'attachment'}
     live = [it for it in items if text(it, 'wp:post_type') in ('post', 'page')]
     id_to_path = {text(it, 'wp:post_id'): path_of(it) for it in live if text(it, 'wp:status') == 'publish'}
 
@@ -152,9 +177,19 @@ def main(xml_path, out_dir):
         # trailing spaces / stray <br /> inside an address make the link unusable
         body = re.sub(r'(href=["\'][^"\']*?)(?:\s|<br\s*/?>)+(["\'])', r'\1\2', body)
         body = fix_links(body)
+        pm = postmeta(it)
+        title = html.unescape(title)
+        # social-sharing image: the featured image, else the one Rank Math stored for the first image in the text
+        stored = re.search(r'https?://[^"\']+?\.(?:jpe?g|png|gif|webp)', pm.get('rank_math_og_content_image', ''), re.I)
+        first_img = re.search(r'<img\b[^>]*\bsrc=["\'](/[^"\']+)', body)
+        image = (attachments.get(pm.get('_thumbnail_id', '')) or (re.sub(OLD_HOSTS, '', stored.group(0)) if stored else '')
+                 or (first_img.group(1) if first_img else ''))
         meta = {
             'id': int(text(it, 'wp:post_id')),
             'title': title,
+            'seo_title': seo_title(pm, title, sitename),
+            'description': seo_description(pm, body),
+            'image': image,
             'slug': slug,
             'path': path_of(it),
             'date': text(it, 'wp:post_date')[:10],

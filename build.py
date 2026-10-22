@@ -29,7 +29,8 @@ SITE = json.loads((CONTENT / 'site.json').read_text(encoding='utf-8'))
 SITE_URL = SITE['url']
 NAME = 'Primary Goals'
 TAGLINE = 'Leadership, teams and organizational development'
-CSS_VERSION = '3'
+CSS_VERSION = '4'
+DEFAULT_IMAGE = '/wp-content/uploads/2024/09/social-share.jpg'  # shared when a page has no image of its own
 # Side panels captured once from the live site (page path -> menus); see README.
 SIDEBARS = (json.loads((CONTENT / 'sidebars.json').read_text(encoding='utf-8'))
             if (CONTENT / 'sidebars.json').exists() else {})
@@ -89,9 +90,19 @@ def wpautop(pee):
     return pee
 
 
+YT_LINE = re.compile(r'(?m)^[ \t]*(?:<p>)?[ \t]*(?:https?://(?:www\.)?(?:youtube\.com/watch\?(?:[^\s<"]*&(?:amp;)?)?v=|youtu\.be/)'
+                     r'([A-Za-z0-9_-]{11})[^\s<"]*)[ \t]*(?:</p>)?[ \t]*$')
+
+
+def embed_videos(s):
+    """WordPress turns a YouTube address alone on its own line into a video player; do the same."""
+    return YT_LINE.sub(lambda m: '\n\n<div class="video"><iframe src="https://www.youtube.com/embed/%s" '
+                                 'title="Video" loading="lazy" allowfullscreen></iframe></div>\n\n' % m.group(1), s)
+
+
 def render_body(raw):
     s = re.sub(r'<!--\s*/?wp:.*?-->', '', raw)
-    return wpautop(s)
+    return wpautop(embed_videos(s))
 
 
 # --------------------------------------------------------------------------
@@ -112,8 +123,28 @@ def nav_html(current, items=None):
     return ''.join(out)
 
 
-def document(title, path, body, description='', noindex=False):
-    full = NAME if path == '/' else '%s – %s' % (title, NAME)
+def abs_url(u):
+    return u if re.match(r'https?://', u) else SITE_URL + u
+
+
+def document(title, path, body, description='', noindex=False, seo_title='', image=''):
+    full = seo_title or '%s – %s' % (title, NAME)
+    desc = description if seo_title else (description or TAGLINE)
+    url = SITE_URL + path
+    img = abs_url(image or DEFAULT_IMAGE)
+    social = [
+        '<meta property="og:locale" content="en_US">',
+        '<meta property="og:type" content="article">',
+        '<meta property="og:title" content="%s">' % esc(full),
+        '<meta property="og:description" content="%s">' % esc(desc) if desc else '',
+        '<meta property="og:url" content="%s">' % esc(url),
+        '<meta property="og:site_name" content="%s">' % esc(NAME),
+        '<meta property="og:image" content="%s">' % esc(img),
+        '<meta name="twitter:card" content="summary_large_image">',
+        '<meta name="twitter:title" content="%s">' % esc(full),
+        '<meta name="twitter:description" content="%s">' % esc(desc) if desc else '',
+        '<meta name="twitter:image" content="%s">' % esc(img),
+    ] if not noindex else []
     return '\n'.join([
         '<!doctype html>',
         '<html lang="en">',
@@ -121,9 +152,10 @@ def document(title, path, body, description='', noindex=False):
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
         '<title>%s</title>' % esc(full),
-        '<meta name="description" content="%s">' % esc(description or TAGLINE),
+        '<meta name="description" content="%s">' % esc(desc) if desc else '',
         '<meta name="robots" content="noindex,follow">' if noindex else '',
         '<link rel="canonical" href="%s%s">' % (SITE_URL, esc(path)),
+        *social,
         '<link rel="stylesheet" href="/assets/site.css?v=%s">' % CSS_VERSION,
         '</head>',
         '<body>',
@@ -193,9 +225,11 @@ def main():
             add(p['path'], document(p['title'], p['path'], listing(
                 p['title'], [(q['path'], q['title'], q['date']) for q in ordered_posts])))
         else:
-            add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], path=p['path'])))
+            add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], path=p['path']),
+                                    p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', '')))
     for p in posts:
-        add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'], p['path'])))
+        add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'], p['path']),
+                                p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', '')))
 
     allp = sorted(((q['path'], q['title'], '') for q in pages + posts), key=lambda e: e[0])
     add('/site-map/', document('Site map', '/site-map/', listing('Site map', allp)))
