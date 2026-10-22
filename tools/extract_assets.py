@@ -21,7 +21,7 @@ REF = re.compile(r'/((?:wp-content/uploads|wp-content/gallery|Diagrams|Readings|
 
 def main(zip_path, content_dir, out_dir):
     # build.py's default social-sharing image, which no page links to directly
-    wanted = {'wp-content/uploads/2024/09/social-share.jpg'}
+    wanted = {'wp-content/uploads/2024/09/social-share.jpg', 'wp-content/uploads/2024/09/logo-square.jpg'}
     for f in Path(content_dir).rglob('*'):
         if f.suffix not in ('.html', '.json'):
             continue

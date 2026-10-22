@@ -51,6 +51,21 @@ NAV = [
     ('About', '/about/', []),
     ('Contact', '/about/contact/', []),
 ]
+# Videos that the export does not contain (they were added with Thrive Architect): read from the live pages.
+# path -> [(heading the video follows, YouTube id, title)]
+VIDEOS = {
+    '/offers/brandscripts-made-simple/client-instructions/': [
+        ('Using the StorySheet BrandScript Generator', '3EAmyCI_JHc', 'Client Instructions'),
+        ('Sheet #1. Client Instructions', 'p0XuaZJKRWc', 'Troubleshooting Add-On Installation'),
+        ('Troubleshooting', 'igRXcCyHe_0', 'Licensing Whistle for your BrandScript'),
+        ('Sheet #2. Getting Your License', 'A26FklGl0Dw', 'Transformation'),
+        ('Sheet #7. Success', '7JYQDRrKYtA', 'Whistle Narrative')],
+    '/offers/brandscripts-made-simple/guide-instructions/': [
+        ('Instructions for StoryBrand Guides', 'fmvwGn5pzzA', 'Guide Instructions'),
+        ('Download: Beta Test Version 1.5.5', 'p0XuaZJKRWc', 'Troubleshooting Add-On Installation'),
+        ('Troubleshooting', 'QmzOi6_hKwE', 'Adding Custom Reference info to StorySheet'),
+        ('Adding Private Reference Material', 'cawmUull9Aw', 'Livestream Dashboard')],
+}
 # Sections that were removed from the site on purpose (pages and every link to them).
 REMOVED_PREFIXES = ('/marketing/',)
 DEPRECATED = re.compile(
@@ -79,6 +94,20 @@ def text(el, tag):
 
 def postmeta(it):
     return {text(m, 'wp:meta_key'): text(m, 'wp:meta_value') for m in it.findall('wp:postmeta', NS)}
+
+
+def add_videos(body, specs):
+    """Put each video right after the heading it followed on the live page (at the end if that heading is gone)."""
+    for heading, vid, title in specs:
+        player = ('\n<div class="video"><iframe src="https://www.youtube.com/embed/%s" title="%s" loading="lazy" '
+                  'allowfullscreen></iframe></div>\n' % (vid, html.escape(title)))
+        for m in re.finditer(r'<h[1-4]\b[^>]*>(.*?)</h[1-4]>', body, flags=re.S):
+            if html.unescape(re.sub(r'<[^>]+>', '', m.group(1))).replace('\xa0', ' ').strip().startswith(heading):
+                body = body[:m.end()] + player + body[m.end():]
+                break
+        else:
+            body += player
+    return body
 
 
 def seo_title(pm, title, sitename):
@@ -177,6 +206,7 @@ def main(xml_path, out_dir):
         # trailing spaces / stray <br /> inside an address make the link unusable
         body = re.sub(r'(href=["\'][^"\']*?)(?:\s|<br\s*/?>)+(["\'])', r'\1\2', body)
         body = fix_links(body)
+        body = add_videos(body, VIDEOS.get(path_of(it), []))
         pm = postmeta(it)
         title = html.unescape(title)
         # social-sharing image: the featured image, else the one Rank Math stored for the first image in the text
@@ -194,6 +224,8 @@ def main(xml_path, out_dir):
             'path': path_of(it),
             'date': text(it, 'wp:post_date')[:10],
             'modified': text(it, 'wp:post_modified'),
+            'published_gmt': text(it, 'wp:post_date_gmt').replace(' ', 'T') + '+00:00',
+            'modified_gmt': text(it, 'wp:post_modified_gmt').replace(' ', 'T') + '+00:00',
             'type': kind,
         }
         fname = '%s-%s.html' % (meta['id'], slug or 'untitled') if kind == 'page' else (slug or str(meta['id'])) + '.html'

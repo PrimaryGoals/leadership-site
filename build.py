@@ -35,6 +35,14 @@ DEFAULT_IMAGE = '/wp-content/uploads/2024/09/social-share.jpg'  # shared when a 
 SIDEBARS = (json.loads((CONTENT / 'sidebars.json').read_text(encoding='utf-8'))
             if (CONTENT / 'sidebars.json').exists() else {})
 HAVE = set()
+GTM_ID = 'GTM-KHMRKD2'  # Google Tag Manager; it manages the other tags (analytics etc.)
+GTM_HEAD = ("<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});"
+            "var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;"
+            "j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})"
+            "(window,document,'script','dataLayer','%s');</script>" % GTM_ID)
+GTM_BODY = ('<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=%s" height="0" width="0" '
+            'style="display:none;visibility:hidden"></iframe></noscript>' % GTM_ID)
+LOGO = '/wp-content/uploads/2024/09/logo-square.jpg'
 
 esc = html.escape
 
@@ -127,7 +135,34 @@ def abs_url(u):
     return u if re.match(r'https?://', u) else SITE_URL + u
 
 
-def document(title, path, body, description='', noindex=False, seo_title='', image=''):
+def schema_json(path, full, desc, img, page):
+    """JSON-LD in the shape the live site (Rank Math) used: organization, website, page, author and article."""
+    site, url = SITE_URL, SITE_URL + path
+    pid = url + '#webpage'
+    graph = [
+        {'@type': 'Organization', '@id': site + '/#organization', 'name': NAME, 'url': site,
+         'logo': {'@type': 'ImageObject', '@id': site + '/#logo', 'url': site + LOGO, 'contentUrl': site + LOGO,
+                  'caption': NAME, 'inLanguage': 'en-US', 'width': '1024', 'height': '1024'}},
+        {'@type': 'WebSite', '@id': site + '/#website', 'url': site, 'name': NAME,
+         'publisher': {'@id': site + '/#organization'}, 'inLanguage': 'en-US'},
+        {'@type': 'ImageObject', '@id': img, 'url': img, 'inLanguage': 'en-US'},
+        {'@type': 'WebPage', '@id': pid, 'url': url, 'name': full, 'datePublished': page['published'],
+         'dateModified': page['modified'], 'isPartOf': {'@id': site + '/#website'},
+         'primaryImageOfPage': {'@id': img}, 'inLanguage': 'en-US'},
+        {'@type': 'Person', '@id': url + '#author', 'name': 'Ashley Guberman',
+         'sameAs': ['https://PrimaryGoals.com', 'https://twitter.com/primarygoals'],
+         'worksFor': {'@id': site + '/#organization'}},
+        {'@type': 'BlogPosting' if page['type'] == 'post' else 'Article', 'headline': full,
+         'datePublished': page['published'], 'dateModified': page['modified'],
+         'author': {'@id': url + '#author', 'name': 'Ashley Guberman'}, 'publisher': {'@id': site + '/#organization'},
+         'description': desc, 'name': full, 'isPartOf': {'@id': pid}, 'mainEntityOfPage': {'@id': pid},
+         'inLanguage': 'en-US'},
+    ]
+    data = json.dumps({'@context': 'https://schema.org', '@graph': graph}, ensure_ascii=False).replace('</', '<' + chr(92) + '/')
+    return '<script type="application/ld+json">%s</script>' % data
+
+
+def document(title, path, body, description='', noindex=False, seo_title='', image='', page=None):
     full = seo_title or '%s – %s' % (title, NAME)
     desc = description if seo_title else (description or TAGLINE)
     url = SITE_URL + path
@@ -151,14 +186,17 @@ def document(title, path, body, description='', noindex=False, seo_title='', ima
         '<head>',
         '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        GTM_HEAD,
         '<title>%s</title>' % esc(full),
         '<meta name="description" content="%s">' % esc(desc) if desc else '',
         '<meta name="robots" content="noindex,follow">' if noindex else '',
         '<link rel="canonical" href="%s%s">' % (SITE_URL, esc(path)),
         *social,
+        schema_json(path, full, desc, img, page) if page and not noindex else '',
         '<link rel="stylesheet" href="/assets/site.css?v=%s">' % CSS_VERSION,
         '</head>',
         '<body>',
+        GTM_BODY,
         '<a class="skip" href="#content">Skip to content</a>',
         '<header class="top"><div class="wrap">',
         '<a class="brand" href="/" rel="home">%s</a>' % esc(NAME),
@@ -191,6 +229,11 @@ def sidebar_html(path):
             ' class="current"' if h == path else '', esc(h), esc(l)) for l, h in links)
         out.append('<section><h2>%s</h2><ul>%s</ul></section>' % (esc(menu['title']), items))
     return '<aside class="side" aria-label="Section menu">%s</aside>' % ''.join(out) if out else ''
+
+
+def page_info(p):
+    return {'type': p.get('type', 'page'), 'published': p.get('published_gmt') or p['date'],
+            'modified': p.get('modified_gmt') or p['date']}
 
 
 def article(title, raw, date='', path=''):
@@ -226,10 +269,10 @@ def main():
                 p['title'], [(q['path'], q['title'], q['date']) for q in ordered_posts])))
         else:
             add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], path=p['path']),
-                                    p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', '')))
+                                    p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', ''), page=page_info(p)))
     for p in posts:
         add(p['path'], document(p['title'], p['path'], article(p['title'], p['raw'], p['date'], p['path']),
-                                p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', '')))
+                                p.get('description', ''), seo_title=p.get('seo_title', ''), image=p.get('image', ''), page=page_info(p)))
 
     allp = sorted(((q['path'], q['title'], '') for q in pages + posts), key=lambda e: e[0])
     add('/site-map/', document('Site map', '/site-map/', listing('Site map', allp)))
