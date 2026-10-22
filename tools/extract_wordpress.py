@@ -117,7 +117,12 @@ def main(xml_path, out_dir):
         return re.sub(r'(\s(?:href|src)=["\'])/leadership/(?=(?:reduce-breakdowns|theory|conflict)/)', r'\1/', body)
 
     for sub in ('pages', 'posts'):
-        os.makedirs(os.path.join(out_dir, sub), exist_ok=True)
+        folder = os.path.join(out_dir, sub)
+        os.makedirs(folder, exist_ok=True)
+        # start clean so pages that are now skipped don't linger from an earlier run
+        for old in os.listdir(folder):
+            if old.endswith('.html'):
+                os.remove(os.path.join(folder, old))
     kept, skipped = [], []
     for it in live:
         kind = text(it, 'wp:post_type')
