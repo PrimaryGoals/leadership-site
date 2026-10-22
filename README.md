@@ -35,5 +35,5 @@ Rebuild after any change, then check it:
 * Left out on purpose (see `content/skipped.txt`): drafts, private and password-protected pages, and pages that only work inside WordPress (shop, cart, checkout, My Account, login, members-only content, the Gravity Form page).
 * Side panels: 191 pages show the same section menu as the live site (e.g. the Books list on every `/teams/books/` page). The live site's "Blog categories" panel is left out because there are no category pages here.
 * The original page layouts were built with Thrive Architect. They are rendered here as plain content in one simple design, so layout and styling differ from the old site.
-* Known broken internal links (listed by `tools/check_site.py`): the short links `/discovery/`, `/bmsu/`, `/whistle`, `/schedule` and similar were WordPress redirects whose targets were not in the export; three uploads (`2000Ideavirus.pdf`, `courses-box.png`, `live-workshop.jpg`) are not in the archive.
+* `tools/check_site.py` reports no broken internal links. Links to the retired short addresses (`/bmsu/`, `/discovery/`, `/schedule`, `/login` and similar) and to `/marketing/` were removed (the link text stays). Three uploads (`2000Ideavirus.pdf`, `courses-box.png`, `live-workshop.jpg`) are not in the archive.
 * The raw export and archive are never committed (`.gitignore`): they contain account details.
