@@ -12,6 +12,7 @@ paths they had there (/about/, /theory/learning/, /<post-slug>/ ...).
 Extra pages generated here: /blog/ (when the old page was empty: a list of all
 posts), /site-map/ (every page and post), /404.html.
 """
+import hashlib
 import html
 import json
 import re
@@ -29,7 +30,8 @@ SITE = json.loads((CONTENT / 'site.json').read_text(encoding='utf-8'))
 SITE_URL = SITE['url']
 NAME = 'Primary Goals'
 TAGLINE = 'Leadership, teams and organizational development'
-CSS_VERSION = '4'
+CSS_VERSION = '5'
+SEARCH_INDEX_URL = ''  # set in main(): /assets/search-index.json?v=<hash of the index>
 DEFAULT_IMAGE = '/wp-content/uploads/2024/09/social-share.jpg'  # shared when a page has no image of its own
 # Side panels captured once from the live site (page path -> menus); see README.
 SIDEBARS = (json.loads((CONTENT / 'sidebars.json').read_text(encoding='utf-8'))
@@ -138,6 +140,39 @@ def abs_url(u):
     return u if re.match(r'https?://', u) else SITE_URL + u
 
 
+def plain_text(raw):
+    """The readable text of a page body (no tags, comments, scripts), for the search index."""
+    s = re.sub(r'<!--.*?-->|<(script|style)\b.*?</\1>', ' ', raw, flags=re.S | re.I)
+    s = html.unescape(re.sub(r'<[^>]+>', ' ', s)).replace('\xa0', ' ')
+    return re.sub(r'\s+', ' ', s).strip()
+
+
+def search_index(pages, posts):
+    """One entry per page and post: address, title, description and the full text. Searched in the browser."""
+    entries = []
+    for p in pages + posts:
+        if p['path'] == '/blog/' and not plain_text(p['raw']):
+            continue  # the generated post list: its posts are indexed themselves
+        seo = seo_args(p)
+        entries.append({'u': p['path'], 't': p['title'], 'd': seo['description'] or '', 'x': plain_text(p['raw'])})
+    entries.sort(key=lambda e: e['u'])
+    data = json.dumps(entries, ensure_ascii=False, separators=(',', ':'))
+    return data, hashlib.md5(data.encode('utf-8')).hexdigest()[:8]
+
+
+def search_form(index_url):
+    return ('<form class="search" role="search" action="/search/" method="get" data-index="%s">'
+            '<label class="sr" for="q">Search this site</label>'
+            '<input id="q" name="q" type="search" placeholder="Search" autocomplete="off" '
+            'aria-autocomplete="list" aria-controls="search-pop" aria-expanded="false">'
+            '<button type="submit" aria-label="Search"><svg viewBox="0 0 20 20" width="16" height="16" '
+            'aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" '
+            'stroke-width="2"/><path d="M13 13l5 5" stroke="currentColor" stroke-width="2" '
+            'stroke-linecap="round"/></svg></button>'
+            '<div class="search-pop" id="search-pop" role="listbox" aria-label="Search results" hidden></div>'
+            '</form>' % esc(index_url))
+
+
 def schema_json(path, full, desc, img, page):
     """JSON-LD in the shape the live site (Rank Math) used: organization, website, page, author and article."""
     site, url = SITE_URL, SITE_URL + path
@@ -146,8 +181,10 @@ def schema_json(path, full, desc, img, page):
         {'@type': 'Organization', '@id': site + '/#organization', 'name': NAME, 'url': site,
          'logo': {'@type': 'ImageObject', '@id': site + '/#logo', 'url': site + LOGO, 'contentUrl': site + LOGO,
                   'caption': NAME, 'inLanguage': 'en-US', 'width': '1024', 'height': '1024'}},
-        {'@type': 'WebSite', '@id': site + '/#website', 'url': site, 'name': NAME,
-         'publisher': {'@id': site + '/#organization'}, 'inLanguage': 'en-US'},
+        dict({'@type': 'WebSite', '@id': site + '/#website', 'url': site, 'name': NAME,
+              'publisher': {'@id': site + '/#organization'}, 'inLanguage': 'en-US'},
+             **({'potentialAction': {'@type': 'SearchAction', 'target': site + '/search/?q={search_term_string}',
+                                     'query-input': 'required name=search_term_string'}} if path == '/' else {})),
         {'@type': 'ImageObject', '@id': img, 'url': img, 'inLanguage': 'en-US'},
         {'@type': 'WebPage', '@id': pid, 'url': url, 'name': full, 'datePublished': page['published'],
          'dateModified': page['modified'], 'isPartOf': {'@id': site + '/#website'},
@@ -204,10 +241,12 @@ def document(title, path, body, description='', noindex=False, seo_title='', ima
         '<header class="top"><div class="wrap">',
         '<a class="brand" href="/" rel="home">%s</a>' % esc(NAME),
         '<nav aria-label="Primary"><ul>%s</ul></nav>' % nav_html(path),
+        search_form(SEARCH_INDEX_URL),
         '</div></header>',
         body,
         '<footer class="foot"><div class="wrap"><p>© Primary Goals · '
         '<a href="/site-map/">Site map</a></p></div></footer>',
+        '<script src="/assets/search.js?v=%s" defer></script>' % CSS_VERSION,
         '</body></html>',
     ])
 
@@ -263,10 +302,13 @@ def listing(title, entries):
 
 
 def main():
+    global SEARCH_INDEX_URL
     pages, posts = load('pages'), load('posts')
     HAVE.update(p['path'] for p in pages + posts)
-    HAVE.update(('/blog/', '/site-map/'))
-    out = {}
+    HAVE.update(('/blog/', '/site-map/', '/search/'))
+    index_json, index_hash = search_index(pages, posts)
+    SEARCH_INDEX_URL = '/assets/search-index.json?v=%s' % index_hash
+    out = {'/assets/search-index.json': index_json}
 
     def add(path, content):
         if path in out:
@@ -287,12 +329,19 @@ def main():
 
     allp = sorted(((q['path'], q['title'], '') for q in pages + posts), key=lambda e: e[0])
     add('/site-map/', document('Site map', '/site-map/', listing('Site map', allp)))
+    body = ('<main id="content"><div class="wrap"><article><h1>Search</h1>'
+            '<p class="meta" id="search-status" role="status" aria-live="polite"></p>'
+            '<div id="search-results"></div>'
+            '<noscript><p>Search needs JavaScript. Use the <a href="/site-map/">site map</a> to browse '
+            'every page instead.</p></noscript></article></div></main>')
+    add('/search/', document('Search', '/search/', body, noindex=True))
     body = ('<main id="content"><div class="wrap"><article><h1>Page not found</h1>'
             '<div class="prose"><p>That page doesn’t exist here. Try the <a href="/">home page</a> '
             'or the <a href="/site-map/">site map</a>.</p></div></article></div></main>')
     out['/404.html'] = document('Page not found', '/404.html', body, noindex=True)
 
-    urls = ''.join('<url><loc>%s%s</loc></url>' % (SITE_URL, esc(p)) for p in sorted(out) if p.endswith('/'))
+    urls = ''.join('<url><loc>%s%s</loc></url>' % (SITE_URL, esc(p)) for p in sorted(out)
+                   if p.endswith('/') and p != '/search/')
     out['/sitemap.xml'] = ('<?xml version="1.0" encoding="UTF-8"?>\n'
                            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">%s</urlset>\n' % urls)
     out['/robots.txt'] = 'User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n' % SITE_URL

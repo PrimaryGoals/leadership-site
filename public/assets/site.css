@@ -34,3 +34,18 @@ iframe{max-width:100%}
 .side li.current>a{font-weight:700;color:var(--ink);text-decoration:none}
 @media(max-width:800px){.wrap.has-side{display:block}.side{margin-bottom:1.5rem}}
 .video{position:relative;padding-bottom:56.25%;height:0;margin:1rem 0}.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.search{position:relative;display:flex;align-items:center;margin-left:auto}
+.search input{width:11rem;padding:.4rem 2.1rem .4rem .7rem;border:1px solid rgba(255,255,255,.5);border-radius:999px;background:#fff;color:var(--ink);font:.95rem system-ui,sans-serif}
+.search input:focus{outline:2px solid #fff;outline-offset:2px;width:14rem}
+.search button{position:absolute;right:.15rem;top:50%;transform:translateY(-50%);width:2rem;height:2rem;border:0;border-radius:50%;background:transparent;color:var(--brand);cursor:pointer}
+.top .search-pop{position:absolute;right:0;top:calc(100% + .5rem);width:min(32rem,92vw);max-height:70vh;overflow:auto;background:#fff;color:var(--ink);border:1px solid var(--line);border-radius:6px;box-shadow:0 8px 24px rgba(0,0,0,.25);z-index:30;font:.92rem/1.4 system-ui,sans-serif}
+.top .search-pop a{display:block;padding:.6rem .9rem;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+.top .search-pop a strong{display:block;color:var(--brand)}
+.top .search-pop a span{display:block;color:var(--muted);font-size:.85rem}
+.top .search-pop a:hover,.top .search-pop a.on{background:#eef3f7;text-decoration:none}
+.top .search-pop a.all{text-align:center;font-weight:600;color:var(--brand);border-bottom:0}
+.search-pop .none{margin:0;padding:.8rem .9rem;color:var(--muted)}
+mark{background:#fff0a8;color:inherit;padding:0 .1em}
+.hit{margin:1.4rem 0}.hit h2{margin:0;font-size:1.15rem}.hit p{margin:.2rem 0}
+@media(max-width:700px){.search{order:3;width:100%;margin-left:0}.search input,.search input:focus{width:100%}.top .search-pop{left:0;right:auto;width:100%}}
